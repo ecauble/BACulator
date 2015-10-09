@@ -108,7 +108,7 @@ class BACInterfaceController: WKInterfaceController {
             prefs.setValue(usr.drinkCount, forKey: "drinkCount")
             prefs.setValue(usr.startTime, forKey: "startTime")
         }else{
-            self.pushControllerWithName("switchController", context: nil)
+            self.pushControllerWithName("SwitchController", context: nil)
 
         }
     }

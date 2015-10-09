@@ -19,6 +19,7 @@ class TimerInterfaceController: WKInterfaceController {
     var usr = User()
     var startTime : NSDate?
     
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if let val: User = context as? User {
@@ -31,6 +32,7 @@ class TimerInterfaceController: WKInterfaceController {
 
     }
 
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -47,8 +49,6 @@ class TimerInterfaceController: WKInterfaceController {
         return usr
     }
     
-    
- 
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

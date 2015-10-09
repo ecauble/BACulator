@@ -35,7 +35,6 @@ class SwitchController: WKInterfaceController {
             usr.startTime = prefs.objectForKey("startTime") as? NSDate
             usr.beerABV = prefs.objectForKey("beerABV") as? Double
             usr.drinkCount = prefs.objectForKey("drinkCount") as? Int
-            
             self.pushControllerWithName("BACViewController", context: usr)
             
         }else{
