@@ -40,6 +40,14 @@ class BACInterfaceController: WKInterfaceController {
             print("no value was set")
         }
         // Configure interface objects here.
+        
+        addMenuItemWithImageNamed("plus", title: "reset", action: Selector("resetDefaults")){
+            
+        }
+    }
+    
+    func resetDefaults(){
+        
     }
 
     override func willActivate() {
@@ -55,11 +63,11 @@ class BACInterfaceController: WKInterfaceController {
             print("The user" + user)
         }else{
             //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setValue(usr.gender, forKey: "gender")
-            prefs.setValue(usr.weight, forKey: "weight")
-            prefs.setValue(usr.startTime, forKey: "startTime")
-            prefs.setValue(usr.beerABV, forKey: "beerABV")
-            prefs.setValue(usr.drinkCount, forKey: "drinkCount")
+            prefs.setObject(usr.gender, forKey: "gender")
+            prefs.setObject(usr.weight, forKey: "weight")
+            prefs.setObject(usr.startTime, forKey: "startTime")
+            prefs.setObject(usr.beerABV, forKey: "beerABV")
+            prefs.setObject(usr.drinkCount, forKey: "drinkCount")
             countLabel.setText(String(drinkCount))
         }
      }
@@ -104,7 +112,7 @@ class BACInterfaceController: WKInterfaceController {
         usr.startTime = NSDate()
         BACLabel.setText("≅ 0.0")
         BACLabel.setTextColor(UIColor.whiteColor())
-        if let _ = prefs.stringForKey("user"){
+        if let _ = prefs.stringForKey("drinkCount"){
             prefs.setValue(usr.drinkCount, forKey: "drinkCount")
             prefs.setValue(usr.startTime, forKey: "startTime")
         }else{

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1310EC21BC64E1C00471C35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC11BC64E1C00471C35 /* User.swift */; settings = {ASSET_TAGS = (); }; };
-		A1310EC61BC6539800471C35 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchController.swift */; settings = {ASSET_TAGS = (); }; };
+		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310EC81BC6648C00471C35 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -95,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		A1310EC11BC64E1C00471C35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A1310EC51BC6539800471C35 /* SwitchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
+		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		A1AAB0631BC5F45F004954F1 /* BACulator WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				A1310EC51BC6539800471C35 /* SwitchController.swift */,
+				A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */,
 				A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */,
 				A1AAB09D1BC6179A004954F1 /* BodySetupInterfaceController.swift */,
 				A1AAB08D1BC603E4004954F1 /* DrinkSetupInterfaceController.swift */,
@@ -499,7 +499,7 @@
 			files = (
 				A1310EC81BC6648C00471C35 /* TimerInterfaceController.swift in Sources */,
 				A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */,
-				A1310EC61BC6539800471C35 /* SwitchController.swift in Sources */,
+				A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */,
 				A1AAB0921BC60D14004954F1 /* Calculator.swift in Sources */,
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,

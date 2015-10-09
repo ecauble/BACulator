@@ -10,7 +10,7 @@ import WatchKit
 import Foundation
 
 
-class SwitchController: WKInterfaceController {
+class SwitchInterfaceController: WKInterfaceController {
 
     let prefs = NSUserDefaults.standardUserDefaults()
 
@@ -28,7 +28,7 @@ class SwitchController: WKInterfaceController {
         super.willActivate()
         
         
-        if let user = prefs.objectForKey("gender"){
+        if let _ = prefs.objectForKey("gender"){
             print("defaults set")
             usr.gender = prefs.objectForKey("gender") as? Int
             usr.weight = prefs.objectForKey("weight") as? Double
