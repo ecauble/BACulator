@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="SwitchController" hidesWhenLoading="NO" id="f9x-cp-GPc" customClass="SwitchInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <imageView height="138" alignment="left" image="beers" id="nfC-85-jOd"/>
+                        <imageView width="136" height="138" alignment="left" image="beers" id="nfC-85-jOd"/>
                         <button width="1" alignment="left" hidden="YES" title="Button" id="UQU-SD-Y7D"/>
                         <button width="1" alignment="left" hidden="YES" isAccessibilityElement="NO" enabled="NO" id="2Uv-mv-cio">
                             <color key="titleColor" red="0.62745098040000002" green="0.68235294120000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
