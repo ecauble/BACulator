@@ -11,6 +11,7 @@
 		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310EC81BC6648C00471C35 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		A17FBB621BC8A8CB008FEA91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17FBB611BC8A8CB008FEA91 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */; };
 		A1AAB02E1BC5F45F004954F1 /* AddBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */; };
@@ -19,7 +20,6 @@
 		A1AAB0411BC5F45F004954F1 /* BACulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB0401BC5F45F004954F1 /* BACulatorTests.swift */; };
 		A1AAB04C1BC5F45F004954F1 /* BACulatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB04B1BC5F45F004954F1 /* BACulatorUITests.swift */; };
 		A1AAB0511BC5F45F004954F1 /* BACulator WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = A1AAB0501BC5F45F004954F1 /* BACulator WatchKit App.app */; };
-		A1AAB0591BC5F45F004954F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB0581BC5F45F004954F1 /* Assets.xcassets */; };
 		A1AAB0601BC5F45F004954F1 /* BACulator WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A1AAB05F1BC5F45F004954F1 /* BACulator WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		A1AAB0691BC5F45F004954F1 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB0681BC5F45F004954F1 /* ExtensionDelegate.swift */; };
 		A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB06A1BC5F45F004954F1 /* NotificationController.swift */; };
@@ -98,6 +98,7 @@
 		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
+		A17FBB611BC8A8CB008FEA91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../Desktop/Assets.xcassets; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
 		A1AAB0281BC5F45F004954F1 /* BACulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BACulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		A1AAB04D1BC5F45F004954F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1AAB0501BC5F45F004954F1 /* BACulator WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BACulator WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB0561BC5F45F004954F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		A1AAB0581BC5F45F004954F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1AAB05A1BC5F45F004954F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1AAB05F1BC5F45F004954F1 /* BACulator WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "BACulator WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB0651BC5F45F004954F1 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 		A1AAB0541BC5F45F004954F1 /* BACulator WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				A17FBB611BC8A8CB008FEA91 /* Assets.xcassets */,
 				A1AAB0551BC5F45F004954F1 /* Interface.storyboard */,
-				A1AAB0581BC5F45F004954F1 /* Assets.xcassets */,
 				A1AAB05A1BC5F45F004954F1 /* Info.plist */,
 			);
 			path = "BACulator WatchKit App";
@@ -447,8 +447,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A17FBB621BC8A8CB008FEA91 /* Assets.xcassets in Resources */,
 				A1AAB0A01BC61890004954F1 /* Interface.storyboard in Resources */,
-				A1AAB0591BC5F45F004954F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

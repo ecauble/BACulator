@@ -41,14 +41,15 @@ class BACInterfaceController: WKInterfaceController {
         }
         // Configure interface objects here.
         
-        addMenuItemWithImageNamed("plus", title: "reset", action: Selector("resetDefaults")){
-            
-        }
+        addMenuItemWithImageNamed("reset-menu", title: "Reset Defaults", action: "resetDefaults")
+       
     }
     
     func resetDefaults(){
-        
+        print("yolo")
     }
+    
+    
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
