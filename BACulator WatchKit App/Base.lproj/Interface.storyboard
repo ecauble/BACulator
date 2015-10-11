@@ -11,43 +11,11 @@
                 <controller identifier="SwitchController" hidesWhenLoading="NO" id="f9x-cp-GPc" customClass="SwitchInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
                         <imageView width="136" height="138" alignment="left" image="beers" id="nfC-85-jOd"/>
-                        <button width="1" alignment="left" hidden="YES" title="Button" id="UQU-SD-Y7D"/>
-                        <button width="1" alignment="left" hidden="YES" isAccessibilityElement="NO" enabled="NO" id="2Uv-mv-cio">
-                            <color key="titleColor" red="0.62745098040000002" green="0.68235294120000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                        </button>
                     </items>
-                    <menu key="menu" id="Cnq-pe-Npd">
-                        <items>
-                            <menuItem title="Menu Item" id="omF-xz-B7s"/>
-                        </items>
-                    </menu>
                     <color key="backgroundColor" red="0.42745098040000001" green="0.51764705879999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-49" y="22"/>
-        </scene>
-        <!--Timer Interface Controller-->
-        <scene sceneID="tVj-cx-3SH">
-            <objects>
-                <controller hidesWhenLoading="NO" id="nQF-VB-s7d" customClass="TimerInterfaceController" customModule="BACulator_WatchKit_Extension">
-                    <items>
-                        <timer width="136" alignment="center" verticalAlignment="center" textAlignment="center" id="6eR-Jw-mQd">
-                            <fontDescription key="font" type="italicSystem" pointSize="27"/>
-                        </timer>
-                        <button width="1" alignment="center" verticalAlignment="center" title="Start Party" id="xQn-BC-kQ3">
-                            <color key="backgroundColor" red="0.10196078431372549" green="0.10196078431372549" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="X5A-RT-DaH" kind="push" identifier="showBAC" id="Wv2-s2-c5V"/>
-                            </connections>
-                        </button>
-                        <imageView width="49" height="64" alignment="center" image="party-hat" id="WZ5-q2-D5J"/>
-                    </items>
-                    <connections>
-                        <outlet property="stopWatch" destination="6eR-Jw-mQd" id="PyG-n1-wAa"/>
-                    </connections>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="692" y="266"/>
         </scene>
         <!--BACViewController-->
         <scene sceneID="caS-DG-9zD">
@@ -56,13 +24,13 @@
                     <items>
                         <group width="1" alignment="left" id="HIF-aB-rH6">
                             <items>
-                                <button width="43" height="17.5" alignment="left" title="Clear" id="KlZ-Bw-Cz5">
+                                <button width="43" height="17.5" alignment="left" title="Start" id="KlZ-Bw-Cz5">
                                     <accessibilityTraits key="accessibilityTraits" button="YES" playsSound="YES"/>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="font" type="system" pointSize="9"/>
+                                    <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
                                     <connections>
-                                        <action selector="clearAndRest" destination="X5A-RT-DaH" id="eXJ-VU-MQK"/>
+                                        <action selector="stopStartPressed" destination="X5A-RT-DaH" id="U5Z-Fb-Ne1"/>
                                     </connections>
                                 </button>
                                 <timer width="89" alignment="right" textAlignment="center" id="L7Y-24-VPB">
@@ -75,7 +43,7 @@
                         <label width="136" height="26.5" alignment="center" text="BAC% " textAlignment="center" id="bh8-9c-Qgb">
                             <fontDescription key="font" type="system" weight="heavy" pointSize="19"/>
                         </label>
-                        <label width="136" height="45.5" alignment="center" text="≅ 0.0" textAlignment="center" id="m5R-5O-f2J">
+                        <label width="136" height="45.5" alignment="center" text="≅ 0.00000" textAlignment="center" id="m5R-5O-f2J">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="25"/>
                         </label>
@@ -101,11 +69,12 @@
                     <connections>
                         <outlet property="BACLabel" destination="m5R-5O-f2J" id="whW-NW-b7P"/>
                         <outlet property="countLabel" destination="hEq-nG-3ef" id="FCe-Rd-Wcj"/>
+                        <outlet property="startStopButton" destination="KlZ-Bw-Cz5" id="uiE-aC-SH4"/>
                         <outlet property="stopWatch" destination="L7Y-24-VPB" id="GFw-M0-Rgp"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="917" y="257"/>
+            <point key="canvasLocation" x="690" y="264"/>
         </scene>
         <!--genderViewController-->
         <scene sceneID="OwF-Kk-Gp9">
@@ -113,7 +82,7 @@
                 <controller identifier="genderViewController" hidesWhenLoading="NO" id="Au0-Pj-Pgr" customClass="GenderInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Set Gender" id="9UY-KS-F2y"/>
-                        <picker width="1" height="78" alignment="left" focusStyle="stack" id="4Vq-y1-lc8">
+                        <picker width="1" height="87" alignment="left" focusStyle="stack" id="4Vq-y1-lc8">
                             <accessibilityTraits key="accessibilityTraits" image="YES" updatesFrequently="YES" adjustable="YES"/>
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="Au0-Pj-Pgr" id="MYn-yq-lUr"/>
@@ -121,7 +90,7 @@
                         </picker>
                         <button width="1" alignment="left" title="Done" id="jhT-aG-A63">
                             <connections>
-                                <segue destination="Hgo-xb-ab1" kind="push" identifier="showWeight" id="6aw-wS-QBg"/>
+                                <segue destination="Hgo-xb-ab1" kind="modal" identifier="showWeight" id="6aw-wS-QBg"/>
                             </connections>
                         </button>
                     </items>
@@ -138,14 +107,14 @@
                 <controller hidesWhenLoading="NO" id="Hgo-xb-ab1" customClass="BodySetupInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Set Body Weight" id="b8Q-La-pAK"/>
-                        <picker width="1" height="78" alignment="left" focusStyle="stack" id="5rH-fs-jPL">
+                        <picker width="1" height="84" alignment="left" focusStyle="stack" id="5rH-fs-jPL">
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="Hgo-xb-ab1" id="hB4-Qb-2bz"/>
                             </connections>
                         </picker>
                         <button width="1" alignment="left" title="Done" id="ufP-p1-fue">
                             <connections>
-                                <segue destination="H08-97-gYE" kind="push" identifier="showBeer" id="uEj-uB-eql"/>
+                                <segue destination="H08-97-gYE" kind="modal" identifier="showBeer" id="uEj-uB-eql"/>
                             </connections>
                         </button>
                     </items>
@@ -154,7 +123,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="205" y="264.5"/>
+            <point key="canvasLocation" x="205" y="264"/>
         </scene>
         <!--Drink Setup Interface Controller-->
         <scene sceneID="9fI-lQ-s29">
@@ -162,14 +131,14 @@
                 <controller hidesWhenLoading="NO" id="H08-97-gYE" customClass="DrinkSetupInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Pick Beer" id="BSM-QV-tLU"/>
-                        <picker width="1" height="78" alignment="left" focusStyle="stack" id="bkg-np-AbA">
+                        <picker width="1" height="86" alignment="left" focusStyle="stack" id="bkg-np-AbA">
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="H08-97-gYE" id="Vk2-uH-7Ud"/>
                             </connections>
                         </picker>
                         <button width="1" alignment="left" title="Done" id="tbQ-WJ-mZ8">
                             <connections>
-                                <segue destination="nQF-VB-s7d" kind="push" identifier="showTimer" id="BrH-SD-UFL"/>
+                                <segue destination="X5A-RT-DaH" kind="modal" identifier="showBAC" id="Sgm-Fy-keO"/>
                             </connections>
                         </button>
                     </items>
@@ -178,7 +147,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="448" y="264.5"/>
+            <point key="canvasLocation" x="448" y="264"/>
         </scene>
     </scenes>
 </document>

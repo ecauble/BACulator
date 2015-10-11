@@ -17,6 +17,6 @@ class User {
     var startTime : NSDate?
     
     init(){
-       drinkCount = 0
+     
     }
 }

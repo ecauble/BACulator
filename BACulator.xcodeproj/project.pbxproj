@@ -11,6 +11,8 @@
 		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310EC81BC6648C00471C35 /* TimerInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
+		A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */; settings = {ASSET_TAGS = (); }; };
+		A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165CB541BCAABA4006C869F /* DefaultsManager.swift */; settings = {ASSET_TAGS = (); }; };
 		A17FBB641BC8B523008FEA91 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17FBB631BC8B523008FEA91 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */; };
@@ -94,10 +96,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A10285181BCB198C00E2E3AF /* BACulator WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BACulator WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		A1310EC11BC64E1C00471C35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC71BC6648C00471C35 /* TimerInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
+		A140A96F1BCA0BE2002CCF29 /* BACulator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BACulator.entitlements; sourceTree = "<group>"; };
+		A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
+		A165CB541BCAABA4006C869F /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		A17FBB631BC8B523008FEA91 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
 		A1AAB0281BC5F45F004954F1 /* BACulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BACulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,8 +198,10 @@
 		A1AAB02A1BC5F45F004954F1 /* BACulator */ = {
 			isa = PBXGroup;
 			children = (
+				A140A96F1BCA0BE2002CCF29 /* BACulator.entitlements */,
 				A1BB12081BC704510062E3FE /* Styles */,
 				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
+				A165CB541BCAABA4006C869F /* DefaultsManager.swift */,
 				A1BB120B1BC718BA0062E3FE /* Calculator.swift */,
 				A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */,
 				A1BB12091BC713A20062E3FE /* SettingsViewController.swift */,
@@ -236,6 +244,7 @@
 		A1AAB0631BC5F45F004954F1 /* BACulator WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A10285181BCB198C00E2E3AF /* BACulator WatchKit Extension.entitlements */,
 				A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */,
 				A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */,
 				A1AAB09D1BC6179A004954F1 /* BodySetupInterfaceController.swift */,
@@ -247,6 +256,7 @@
 				A1AAB0681BC5F45F004954F1 /* ExtensionDelegate.swift */,
 				A1AAB06A1BC5F45F004954F1 /* NotificationController.swift */,
 				A1AAB06C1BC5F45F004954F1 /* ComplicationController.swift */,
+				A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */,
 				A1AAB0861BC602EB004954F1 /* BACulator WatchKit App-Bridging-Header.h */,
 				A1AAB06E1BC5F45F004954F1 /* Assets.xcassets */,
 				A1AAB0701BC5F45F004954F1 /* Info.plist */,
@@ -377,6 +387,11 @@
 					A1AAB0271BC5F45F004954F1 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 27XXJG8HK4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					A1AAB03B1BC5F45F004954F1 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -393,6 +408,11 @@
 					A1AAB05E1BC5F45F004954F1 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = 27XXJG8HK4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -471,6 +491,7 @@
 				A1AAB02E1BC5F45F004954F1 /* AddBeerViewController.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
 				A1BB12031BC6FFB40062E3FE /* ODButton.swift in Sources */,
+				A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */,
 				A1BB120A1BC713A20062E3FE /* SettingsViewController.swift in Sources */,
 				A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */,
 				A1BB120C1BC718BA0062E3FE /* Calculator.swift in Sources */,
@@ -504,6 +525,7 @@
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,
 				A1AAB0951BC60D1C004954F1 /* DrinkSetupInterfaceController.swift in Sources */,
+				A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */,
 				A1AAB06D1BC5F45F004954F1 /* ComplicationController.swift in Sources */,
 				A1310EC21BC64E1C00471C35 /* User.swift in Sources */,
 				A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */,
@@ -651,12 +673,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BACulator WatchKit Extension/BACulator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "BACulator WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopiedoopie.BACulator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -668,12 +693,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BACulator WatchKit Extension/BACulator WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "BACulator WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopiedoopie.BACulator.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -728,12 +756,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BACulator/BACulator.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = BACulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopiedoopie.BACulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -741,12 +772,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BACulator/BACulator.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = BACulator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oopiedoopie.BACulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

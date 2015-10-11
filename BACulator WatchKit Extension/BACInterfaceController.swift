@@ -16,6 +16,7 @@ class BACInterfaceController: WKInterfaceController {
     @IBOutlet var stopWatch: WKInterfaceTimer!
     @IBOutlet var BACLabel: WKInterfaceLabel!
     @IBOutlet var countLabel: WKInterfaceLabel!
+    @IBOutlet var startStopButton: WKInterfaceButton!
     
     
     var usr = User()
@@ -27,8 +28,8 @@ class BACInterfaceController: WKInterfaceController {
     let prefs = NSUserDefaults.standardUserDefaults()
     let calc = Calculator()
     let duration : NSTimeInterval = 1
-    let formatter:NSDateFormatter = NSDateFormatter();
-
+    let formatter:NSDateFormatter = NSDateFormatter()
+    let defaults = DefaultsManager()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -46,7 +47,7 @@ class BACInterfaceController: WKInterfaceController {
     }
     
     func resetDefaults(){
-        print("yolo")
+        defaults.resetDefaults()
     }
     
     
@@ -103,6 +104,16 @@ class BACInterfaceController: WKInterfaceController {
         return usr
     }
     
+    
+    
+    @IBAction func stopStartPressed() {
+    
+    
+    }
+    
+    
+    
+    
     @IBAction func clearAndRest() {
         timer?.invalidate()
         stopWatch.stop()
@@ -137,6 +148,8 @@ class BACInterfaceController: WKInterfaceController {
         }else{
             BACLabel.setTextColor(UIColor.greenColor())
         }
+        defaults.setDrinkCount(drinkCount)
+        defaults.sync()
     }
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {

@@ -15,13 +15,19 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var beerNameTextField: UITextField!
     @IBOutlet weak var setABVTextFeield: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    
+    let defaults = DefaultsManager()
+
     var beerCounter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+       // defaults.setGender(1)
+      //  let set = defaults.isSet(K_GENDER)
+       // print(set)
+      
+        print(defaults.getValueForKey(K_GENDER))
+        print(String(defaults.getValueForKey(K_DRINK_COUNT)))
      }
     
     override func didReceiveMemoryWarning() {

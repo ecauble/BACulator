@@ -12,13 +12,17 @@ class AddBeerViewController: UIViewController {
 
     @IBOutlet weak var beerCountLabel: UILabel!
     
-    var beerCounter = 0
+    var beerCounter : Int?
+    let defaults = DefaultsManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
         beerCountLabel.text = String(beerCounter)
+        defaults.sync()
+            beerCountLabel.text = String(defaults.getValueForKey(K_DRINK_COUNT)!)
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,9 +31,12 @@ class AddBeerViewController: UIViewController {
     }
 
     @IBAction func addBeer(sender: AnyObject) {
-        beerCounter++
+        beerCounter = defaults.getValueForKey(K_DRINK_COUNT) as? Int
         beerCountLabel.text = String(beerCounter)
     }
 
+    deinit{
+        print("beer count was deinit")
+    }
 }
 
