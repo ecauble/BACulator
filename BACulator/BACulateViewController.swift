@@ -54,6 +54,8 @@ class BACulateViewController: UIViewController {
       
         beerCountLabel.text = String(beerCounter)
         defaults.sync()
+        beerCountLabel.shadowColor = UIColor.lightGrayColor()
+        beerCountLabel.shadowOffset = CGSize.init(width: 3, height: 3)
         if(defaults.isSet(K_DRINK_COUNT)){
         beerCountLabel.text = String(defaults.getDrinkCount())
         }else{
@@ -101,9 +103,16 @@ class BACulateViewController: UIViewController {
         let minutes = UInt8(elapsedTime / 60.0)
         elapsedTime -= (NSTimeInterval(minutes) * 60)
         
+        
         //calculate the seconds in elapsed time.
         let seconds = UInt8(elapsedTime)
         elapsedTime -= NSTimeInterval(seconds)
+        if(seconds > 25){
+            beerCountLabel.textColor = UIColor.whiteColor()
+        }
+        else{
+            beerCountLabel.textColor = UIColor.blackColor()
+        }
         
         //find out the fraction of milliseconds to be displayed.
         let fraction = UInt8(elapsedTime * 100)
