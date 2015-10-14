@@ -17,7 +17,7 @@
 		A17FBB641BC8B523008FEA91 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17FBB631BC8B523008FEA91 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */; };
-		A1AAB02E1BC5F45F004954F1 /* AddBeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */; };
+		A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */; };
 		A1AAB0311BC5F45F004954F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB02F1BC5F45F004954F1 /* Main.storyboard */; };
 		A1AAB0361BC5F45F004954F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */; };
 		A1AAB0411BC5F45F004954F1 /* BACulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB0401BC5F45F004954F1 /* BACulatorTests.swift */; };
@@ -110,7 +110,7 @@
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
 		A1AAB0281BC5F45F004954F1 /* BACulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BACulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBeerViewController.swift; sourceTree = "<group>"; };
+		A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACulateViewController.swift; sourceTree = "<group>"; };
 		A1AAB0301BC5F45F004954F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1AAB0351BC5F45F004954F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1AAB0371BC5F45F004954F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,8 +206,8 @@
 				A1F12E631BCE228900C79018 /* Extensions */,
 				A165CB541BCAABA4006C869F /* DefaultsManager.swift */,
 				A1BB12091BC713A20062E3FE /* SettingsViewController.swift */,
-				A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */,
 				A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */,
+				A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */,
 				A1BB120B1BC718BA0062E3FE /* Calculator.swift */,
 				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
 				A1AAB02F1BC5F45F004954F1 /* Main.storyboard */,
@@ -506,7 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1AAB02E1BC5F45F004954F1 /* AddBeerViewController.swift in Sources */,
+				A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
 				A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */,
 				A1BB12031BC6FFB40062E3FE /* ODButton.swift in Sources */,

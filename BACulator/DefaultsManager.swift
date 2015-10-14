@@ -20,6 +20,11 @@ class DefaultsManager: NSObject {
     }
     
     
+    func setDrinkSelectionRow(row : Int){
+        defaults.setObject(row, forKey: K_DRINK_SELECTION_ROW)
+    }
+    
+    
     func setWeight(weight : Double){
         defaults.setObject(weight, forKey: K_WEIGHT)
     }
@@ -61,6 +66,9 @@ class DefaultsManager: NSObject {
         return (defaults.integerForKey(K_DRINK_COUNT))
     }
     
+    func getDrinkSelectionRow() -> Int{
+        return (defaults.integerForKey(K_DRINK_SELECTION_ROW))
+    }
  
     
     //class functions
@@ -93,4 +101,4 @@ let K_WEIGHT        = "k_weight"
 let K_ABV           = "k_ABV"
 let K_START_TIME    = "k_startTime"
 let K_DRINK_COUNT   = "k_drinkCount"
-
+let K_DRINK_SELECTION_ROW = "K_drinkSelectionRow"

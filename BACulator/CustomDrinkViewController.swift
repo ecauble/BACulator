@@ -22,12 +22,20 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        
+        items.append(("Pils", 0.049))
+        items.append(("Lager", 0.050))
+        items.append(("IPA", 0.056))
+        items.append(("Stout", 0.042))
+        if let selectedRow : Int = defaults.getDrinkSelectionRow(){
+             let path = NSIndexPath(forRow: selectedRow, inSection: 1)
+        tableView.selectRowAtIndexPath(path, animated: false, scrollPosition: UITableViewScrollPosition.None)
+            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
+            print(path)
+        }
      }
     
     override func viewDidAppear(animated: Bool) {
-        
+       
      }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -44,12 +52,17 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         ABVTextField.resignFirstResponder()
         beerTextField.resignFirstResponder()
-
+        defaults.setABV(items[indexPath.row].1)
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = "\(self.items[indexPath.row].0)      :       ABV \(self.items[indexPath.row].1 / 100)%"
+        cell.textLabel?.text = "\(self.items[indexPath.row].0)      :       ABV \(self.items[indexPath.row].1)%"
         
         return cell
     }
