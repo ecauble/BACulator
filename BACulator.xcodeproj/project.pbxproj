@@ -36,6 +36,7 @@
 		A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB12061BC704330062E3FE /* ODUIImageView.swift */; settings = {ASSET_TAGS = (); }; };
 		A1BB120A1BC713A20062E3FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB12091BC713A20062E3FE /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1BB120C1BC718BA0062E3FE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB120B1BC718BA0062E3FE /* Calculator.swift */; settings = {ASSET_TAGS = (); }; };
+		A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F12E611BCE225C00C79018 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1761BCDDEBF00660601 /* Calculator.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F6E1791BCDDEDF00660601 /* DrinkSetupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F6E17B1BCDFBCF00660601 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E17A1BCDFBCF00660601 /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
@@ -136,6 +137,7 @@
 		A1BB12061BC704330062E3FE /* ODUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODUIImageView.swift; sourceTree = "<group>"; };
 		A1BB12091BC713A20062E3FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1BB120B1BC718BA0062E3FE /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		A1F12E611BCE225C00C79018 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A1F6E1761BCDDEBF00660601 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSetupInterfaceController.swift; sourceTree = "<group>"; };
 		A1F6E17A1BCDFBCF00660601 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -201,13 +203,13 @@
 			isa = PBXGroup;
 			children = (
 				A1BB12081BC704510062E3FE /* Styles */,
-				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
-				A1F6E17A1BCDFBCF00660601 /* UIColorExtension.swift */,
+				A1F12E631BCE228900C79018 /* Extensions */,
 				A165CB541BCAABA4006C869F /* DefaultsManager.swift */,
 				A1BB12091BC713A20062E3FE /* SettingsViewController.swift */,
 				A1AAB02D1BC5F45F004954F1 /* AddBeerViewController.swift */,
 				A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */,
 				A1BB120B1BC718BA0062E3FE /* Calculator.swift */,
+				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
 				A1AAB02F1BC5F45F004954F1 /* Main.storyboard */,
 				A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */,
 				A1BB12041BC701D70062E3FE /* Assets.xcassets */,
@@ -282,6 +284,15 @@
 				A1BB12061BC704330062E3FE /* ODUIImageView.swift */,
 			);
 			name = Styles;
+			sourceTree = "<group>";
+		};
+		A1F12E631BCE228900C79018 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1F6E17A1BCDFBCF00660601 /* UIColorExtension.swift */,
+				A1F12E611BCE225C00C79018 /* StringExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +508,7 @@
 			files = (
 				A1AAB02E1BC5F45F004954F1 /* AddBeerViewController.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
+				A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */,
 				A1BB12031BC6FFB40062E3FE /* ODButton.swift in Sources */,
 				A1F6E17B1BCDFBCF00660601 /* UIColorExtension.swift in Sources */,
 				A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */,

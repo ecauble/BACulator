@@ -15,13 +15,14 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var ABVTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
-    
+    let defaults = DefaultsManager()
     
     //variables and constants
     var items : [(String, Double)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
         
      }
     
@@ -76,9 +77,7 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
             ABVTextField.text = ""
             beerTextField.text = ""
             }
-        }
-        else
-        {
+        }else{
             print("not set")
         }
     }
@@ -86,16 +85,12 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     
     
     @IBAction func savePrefsButtonPressed(sender: AnyObject) {
-    
-    
+        
+     
+        
     }
     
     
 }
 
 
-private extension String {
-    func toDouble() -> Double? {
-        return NSNumberFormatter().numberFromString(self)?.doubleValue
-    }
-}

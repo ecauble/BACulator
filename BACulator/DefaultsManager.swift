@@ -61,6 +61,7 @@ class DefaultsManager: NSObject {
         return (defaults.integerForKey(K_DRINK_COUNT))
     }
     
+ 
     
     //class functions
     func isSet(key : String) -> Bool{

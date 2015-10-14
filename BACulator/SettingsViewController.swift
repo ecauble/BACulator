@@ -22,13 +22,14 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     let picker = UIPickerView()
     let pickerData = ["Male","Female","Undefined"]
     let imageArray = ["769-male", "768-female", "779-users"]
-    var genderSelection : Int = 3
+    var genderSelection : Int = 2
     var rowIsSet = false
     var weightIsSet = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         picker.delegate = self
         picker.dataSource = self
         setGenderTextField.inputView = picker
@@ -36,6 +37,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         doneButton.hidden = true
         doneButton.userInteractionEnabled = false
         print((setWeightTextField.text)?.toDouble())
+        
+        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
+            genderSelection = defaults.getGender()
+            picker.selectedRowInComponent(genderSelection)
+            setGenderTextField.text = pickerData[genderSelection]
+            changeColorForGender(genderSelection)
+            setWeightTextField.text = String(defaults.getWeight())
+            doneButton.hidden = false
+            doneButton.userInteractionEnabled = true
+            
+        }else{
+            print("not set")
+        }
      }
     
     
@@ -57,26 +71,27 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         setGenderTextField.text = pickerData[row]
         let image = UIImage(named: imageArray[row])
         let imageView = UIImageView(image: image)
-        
+        changeColorForGender(row)
         setGenderTextField.addSubview(imageView)
+        rowIsSet = true
+    }
+    
+    func changeColorForGender(row : Int){
         switch row {
         case 0 :
             picker.backgroundColor = UIColor(rgba: "#0099FF")
             setGenderTextField.backgroundColor = UIColor(rgba: "#0099FF")
-
         case 1 :
             picker.backgroundColor = UIColor(rgba: "#FF66FF")
             setGenderTextField.backgroundColor = UIColor(rgba: "#FF66FF")
-
         case 2 :
             picker.backgroundColor = UIColor(rgba: "#CC66FF")
             setGenderTextField.backgroundColor = UIColor(rgba: "#CC66FF")
-
+            
         default :
             picker.backgroundColor = UIColor.darkGrayColor()
             setGenderTextField.backgroundColor = UIColor.darkGrayColor()
         }
-        rowIsSet = true
     }
     
     
@@ -85,6 +100,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             defaults.setGender(genderSelection)
             if let weight = setWeightTextField.text?.toDouble(){
                 defaults.setWeight(weight)
+                defaults.setGender(genderSelection)
             }
         }
         else
@@ -132,10 +148,4 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         setWeightTextField.resignFirstResponder()
     }
     
-}
-
-private extension String {
-    func toDouble() -> Double? {
-        return NSNumberFormatter().numberFromString(self)?.doubleValue
-    }
 }
