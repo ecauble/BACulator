@@ -11,27 +11,28 @@ import Foundation
 
 
 class DrinkSetupInterfaceController: WKInterfaceController {
-
+    
     @IBOutlet var drinkPicker: WKInterfacePicker!
     
     var items: [(String, String)]! = nil
-    let abvArray: [Double] = [0.049, 0.05, 0.056, 0.042]
     var ABV : Double?
     var usr = User()
-
+    let defaults = DefaultsManager()
+    let abvArray: [Double] = [0.049, 0.05, 0.056, 0.042]
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
         if let val: User = context as? User {
-           print("passed value = \(val.weight)")
+            print("passed value = \(val.weight)")
             self.usr = val
         }
         else{
             print("no value was set")
         }
     }
-
+    
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
@@ -46,18 +47,19 @@ class DrinkSetupInterfaceController: WKInterfaceController {
         }
         drinkPicker.setItems(pickerItems)
         drinkPicker.setSelectedItemIndex(1)
-
-     }
-
-   
+        
+    }
+    
+    
     @IBAction func pickerSelectedItemChanged(value: Int) {
-         self.ABV = abvArray[value]
+        self.ABV = abvArray[value]
     }
     
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         
         // Return data to be accessed in next interfaceController
+        defaults.setABV(self.ABV!)
         usr.beerABV = ABV
         return usr
     }
@@ -68,5 +70,5 @@ class DrinkSetupInterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-
+    
 }

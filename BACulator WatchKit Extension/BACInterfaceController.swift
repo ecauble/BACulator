@@ -25,7 +25,6 @@ class BACInterfaceController: WKInterfaceController {
     var timeZone = NSTimeZone(name: "UTC")
     var startTime : NSDate = NSDate()
     var timeSinceStart = 0.0
-    let prefs = NSUserDefaults.standardUserDefaults()
     let calc = Calculator()
     let duration : NSTimeInterval = 1
     let formatter:NSDateFormatter = NSDateFormatter()
@@ -33,13 +32,7 @@ class BACInterfaceController: WKInterfaceController {
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        if let val : User = context as? User {
-            print("passed value = \(val.startTime)")
-            self.usr = val
-        }
-        else{
-            print("no value was set")
-        }
+        
         // Configure interface objects here.
         
         addMenuItemWithImageNamed("reset-menu", title: "Reset Defaults", action: "resetDefaults")
@@ -48,6 +41,7 @@ class BACInterfaceController: WKInterfaceController {
     
     func resetDefaults(){
         defaults.resetDefaults()
+        self.pushControllerWithName("genderViewController", context: nil)
     }
     
     
@@ -55,23 +49,13 @@ class BACInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        stopWatch.setDate(usr.startTime!)
+        stopWatch.setDate(NSDate())
         
         self.timer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: "timerCount", userInfo: nil, repeats: true)
         self.startTime = usr.startTime!
         timer?.fire()
         stopWatch.start()
-        if let user = prefs.stringForKey("user"){
-            print("The user" + user)
-        }else{
-            //Nothing stored in NSUserDefaults yet. Set a value.
-            prefs.setObject(usr.gender, forKey: "gender")
-            prefs.setObject(usr.weight, forKey: "weight")
-            prefs.setObject(usr.startTime, forKey: "startTime")
-            prefs.setObject(usr.beerABV, forKey: "beerABV")
-            prefs.setObject(usr.drinkCount, forKey: "drinkCount")
-            countLabel.setText(String(drinkCount))
-        }
+        
      }
     
     
@@ -107,8 +91,7 @@ class BACInterfaceController: WKInterfaceController {
     
     
     @IBAction func stopStartPressed() {
-    
-    
+        
     }
     
     
@@ -124,22 +107,25 @@ class BACInterfaceController: WKInterfaceController {
         usr.startTime = NSDate()
         BACLabel.setText("≅ 0.0")
         BACLabel.setTextColor(UIColor.whiteColor())
-        if let _ = prefs.stringForKey("drinkCount"){
-            prefs.setValue(usr.drinkCount, forKey: "drinkCount")
-            prefs.setValue(usr.startTime, forKey: "startTime")
+        if defaults.isSet(K_DRINK_COUNT){
+            defaults.setValue(usr.drinkCount, forKey: K_DRINK_COUNT)
+            defaults.setValue(usr.startTime, forKey: K_START_TIME)
         }else{
-            self.pushControllerWithName("SwitchController", context: nil)
+           // self.pushControllerWithName("SwitchController", context: nil)
 
         }
     }
     
     
     @IBAction func addDrinkCalc() {
+        
+        
+        
         drinkCount++
         usr.drinkCount = drinkCount
         countLabel.setText(String(drinkCount))
-        prefs.setValue(usr.startTime, forKey: "startTime")
-        prefs.setValue(usr.drinkCount, forKey: "drinkCount")
+        defaults.setValue(usr.startTime, forKey: K_START_TIME)
+        defaults.setValue(usr.drinkCount, forKey: K_DRINK_COUNT)
         let BAC : Double = calc.calculateABV(usr.gender!, weight: usr.weight!, ABV: usr.beerABV!, timePassed: timeSinceStart, drinkCount: usr.drinkCount!)
 
         BACLabel.setText("≅" + String(BAC))

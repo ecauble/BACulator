@@ -18,12 +18,12 @@ class Calculator {
     
     func calculateABV(genderAtIndex : Int, weight : Double, ABV : Double, timePassed : Double, drinkCount : Int) -> Double{
         if(drinkCount > 0){
-        let genderConst = rGender[genderAtIndex]
-        let totalOuncesDrank : Double = Double(drinkCount) * beerOunces * ABV
- 
-        //5.14 is used to convert liquid ounces to ounces of weight ie .823 x 100/16
-        let BACpercentage = ((totalOuncesDrank * ouncesConversion) / (weight * genderConst)) - (0.015 * timePassed)
-         return BACpercentage
+            let genderConst = rGender[genderAtIndex]
+            let totalOuncesDrank : Double = Double(drinkCount) * beerOunces * ABV
+            
+            //5.14 is used to convert liquid ounces to ounces of weight ie .823 x 100/16
+            let BACpercentage = ((totalOuncesDrank * ouncesConversion) / (weight * genderConst)) - (0.015 * timePassed)
+            return BACpercentage
         }
         else
         {

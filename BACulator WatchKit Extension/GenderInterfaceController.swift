@@ -14,7 +14,7 @@ class GenderInterfaceController: WKInterfaceController {
     
     
     @IBOutlet var genderPicker: WKInterfacePicker!
-    let prefs = NSUserDefaults.standardUserDefaults()
+    let defaults = DefaultsManager()
     var genderList: [(String, String)] = [("male", "Male"),("female", "Female"), ("undefined", "Undefined")]
     var gender : Int?
     var usr = User()
@@ -51,6 +51,7 @@ class GenderInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         
         // Return data to be accessed in next interfaceController
+        defaults.setGender(gender!)
         usr.gender = gender
         return usr
     }

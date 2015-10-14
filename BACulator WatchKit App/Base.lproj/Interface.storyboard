@@ -10,7 +10,15 @@
             <objects>
                 <controller identifier="SwitchController" hidesWhenLoading="NO" id="f9x-cp-GPc" customClass="SwitchInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <imageView width="136" height="138" alignment="left" image="beers" id="nfC-85-jOd"/>
+                        <label height="48.5" alignment="center" text="BACulator" id="cIS-M5-f8K">
+                            <fontDescription key="font" type="system" weight="black" pointSize="16"/>
+                        </label>
+                        <imageView width="45" height="62" alignment="center" verticalAlignment="center" image="glass" id="nfC-85-jOd"/>
+                        <button width="1" alignment="left" title="Button" id="lmw-Ll-TuN">
+                            <connections>
+                                <action selector="buttonPressed" destination="f9x-cp-GPc" id="lUg-Sg-yFW"/>
+                            </connections>
+                        </button>
                     </items>
                     <color key="backgroundColor" red="0.42745098040000001" green="0.51764705879999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
                 </controller>
@@ -138,7 +146,7 @@
                         </picker>
                         <button width="1" alignment="left" title="Done" id="tbQ-WJ-mZ8">
                             <connections>
-                                <segue destination="X5A-RT-DaH" kind="modal" identifier="showBAC" id="Sgm-Fy-keO"/>
+                                <segue destination="X5A-RT-DaH" kind="push" identifier="showBAC" id="Sgm-Fy-keO"/>
                             </connections>
                         </button>
                     </items>

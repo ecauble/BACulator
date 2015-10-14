@@ -11,69 +11,85 @@ import Foundation
 class DefaultsManager: NSObject {
     
     //constants
-    static let storageKey = "group.oopiedoopie.BACulator"
-    
-    let defaults = NSUserDefaults(suiteName: storageKey)
+    let defaults = NSUserDefaults.standardUserDefaults()
     
     
-    func resetDefaults(){
-        defaults!.removeObjectForKey(K_GENDER)
-        defaults!.removeObjectForKey(K_WEIGHT)
-        defaults!.removeObjectForKey(K_START_TIME)
-        defaults!.removeObjectForKey(K_ABV)
-        defaults!.removeObjectForKey(K_DRINK_COUNT)
-    }
-    
-    
+    //mutators
     func setGender(gender : Int){
-        defaults?.setObject(gender, forKey: K_GENDER)
+        defaults.setObject(gender, forKey: K_GENDER)
     }
     
     
     func setWeight(weight : Double){
-        defaults?.setObject(weight, forKey: K_WEIGHT)
+        defaults.setObject(weight, forKey: K_WEIGHT)
     }
     
     
     func setStartTime(startTime : NSDate){
-        defaults?.setObject(startTime, forKey: K_START_TIME)
+        defaults.setObject(startTime, forKey: K_START_TIME)
     }
     
     
     func setABV(beerABV : Double){
-        defaults?.setObject(beerABV, forKey: K_ABV)
+        defaults.setObject(beerABV, forKey: K_ABV)
     }
     
     
     func setDrinkCount(drinkCount : Int){
-        defaults?.setObject(drinkCount, forKey: K_DRINK_COUNT)
+        defaults.setInteger(drinkCount, forKey: K_DRINK_COUNT)
     }
     
     
-    func getValueForKey(key : String) -> NSObject?{
-        if let obj = defaults?.objectForKey(key){
-            return obj as? NSObject
-        }else {
-            return nil
-        }
+    //accessors
+    func getGender() -> Int{
+        return (defaults.integerForKey(K_GENDER))
     }
     
+    func getWeight() -> Double{
+        return (defaults.doubleForKey(K_WEIGHT))
+    }
+    
+    func getStartTime() -> NSDate{
+        return (defaults.objectForKey(K_START_TIME)) as! NSDate
+    }
+    
+    func getABV()->Double{
+        return (defaults.doubleForKey(K_ABV))
+    }
+    
+    func getDrinkCount() -> Int{
+        return (defaults.integerForKey(K_DRINK_COUNT))
+    }
+    
+    
+    //class functions
     func isSet(key : String) -> Bool{
-        if let _ = defaults!.objectForKey(key){
+        if let _ = defaults.objectForKey(key){
             return true
         }else{
             return false
         }
     }
     
+    
     func sync(){
-        defaults?.synchronize()
+        defaults.synchronize()
     }
+    
+    
+    func resetDefaults(){
+        defaults.removeObjectForKey(K_GENDER)
+        defaults.removeObjectForKey(K_WEIGHT)
+        defaults.removeObjectForKey(K_START_TIME)
+        defaults.removeObjectForKey(K_ABV)
+        defaults.removeObjectForKey(K_DRINK_COUNT)
+    }
+    
 }
 
-let K_GENDER        = "gender"
-let K_WEIGHT        = "weight"
-let K_ABV           = "beerABV"
-let K_START_TIME    = "startTime"
-let K_DRINK_COUNT   = "drinkCount"
+let K_GENDER        = "k_gender"
+let K_WEIGHT        = "k_weight"
+let K_ABV           = "k_ABV"
+let K_START_TIME    = "k_startTime"
+let K_DRINK_COUNT   = "k_drinkCount"
 

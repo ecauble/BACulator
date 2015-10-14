@@ -17,6 +17,7 @@ class BodySetupInterfaceController: WKInterfaceController {
     var weightList: [Double] = []
     var weight : Double?
     var usr = User()
+    let defaults = DefaultsManager()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -55,6 +56,7 @@ class BodySetupInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         
         // Return data to be accessed in next interfaceController
+        defaults.setWeight(weight!)
         usr.weight = weight
         return usr
     }

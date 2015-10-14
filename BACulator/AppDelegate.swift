@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appLaunchedFromShortCut = true
             QuickActionsForItem(currentShorcutItem)
         }
+ 
         // return false if app already launched
         return !appLaunchedFromShortCut
     }
