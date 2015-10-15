@@ -19,7 +19,8 @@ class BACulateViewController: UIViewController {
     @IBOutlet weak var startStopButton: ODRoundButton!
     
     
-    private var counterData : Int?
+    private var data : NSObject?
+    
     private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
     var beerCounter : Int = 0
     let defaults = DefaultsManager()
@@ -29,6 +30,7 @@ class BACulateViewController: UIViewController {
     var startDate : NSDate?
     var timer:NSTimer = NSTimer()
     let green = UIColor(rgba: "#6DFD6E")
+ 
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -113,11 +115,11 @@ class BACulateViewController: UIViewController {
         //calculate the seconds in elapsed time.
         let seconds = UInt8(elapsedTime)
         elapsedTime -= NSTimeInterval(seconds)
-        if(seconds > 25){
+        if(seconds > 20){
             beerCountLabel.textColor = UIColor.whiteColor()
         }
         else{
-            beerCountLabel.textColor = UIColor.blackColor()
+            beerCountLabel.textColor = UIColor(rgba: "#232635")
         }
         
         //find out the fraction of milliseconds to be displayed.
@@ -177,6 +179,9 @@ class BACulateViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
 }
 
 
@@ -189,12 +194,13 @@ extension BACulateViewController: WCSessionDelegate {
         
         //Use this to update the UI instantaneously (otherwise, takes a little while)
         dispatch_async(dispatch_get_main_queue()) {
-            if let counterValue = message[K_DRINK_COUNT] as? Int {
-                self.counterData = counterValue
-                self.beerCountLabel.text = String(counterValue)
+            if let userValue = message["user"] as? NSObject {
+                print("\(userValue.description)")
+                self.data = userValue
+                self.beerCountLabel.text = String(userValue.valueForKey(K_DRINK_COUNT))
             }
         }
     }
     
-}
+}//ends extension
 

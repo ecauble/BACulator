@@ -42,9 +42,15 @@ class BodySetupInterfaceController: WKInterfaceController {
             pickerItem.title = String($0)
             return pickerItem
         }
-        weightPicker.setItems(pickerItems)
-        weightPicker.setSelectedItemIndex(15)
-
+        if(defaults.isSet(K_WEIGHT)){
+            weight = defaults.getWeight()
+            weightPicker.setItems(pickerItems)
+            weightPicker.setSelectedItemIndex(weightList.indexOf(weight!)!)
+            
+        }else{
+            weightPicker.setItems(pickerItems)
+            weightPicker.setSelectedItemIndex(15)
+        }
     }
     
     @IBAction func pickerSelectedItemChanged(value: Int) {

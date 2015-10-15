@@ -14,8 +14,9 @@ class GenderInterfaceController: WKInterfaceController {
     
     
     @IBOutlet var genderPicker: WKInterfacePicker!
+    //constants
     let defaults = DefaultsManager()
-    var genderList: [(String, String)] = [("male", "Male"),("female", "Female"), ("undefined", "Undefined")]
+    var genderList: [String] = ["Male","Female","Undefined"]
     var gender : Int?
     var usr = User()
     
@@ -32,14 +33,19 @@ class GenderInterfaceController: WKInterfaceController {
         
         let pickerItems: [WKPickerItem] = genderList.map {
             let pickerItem = WKPickerItem()
-            pickerItem.accessoryImage = WKImage(imageName: $0.0)
-            pickerItem.title = $0.1
+            pickerItem.accessoryImage = WKImage(imageName: $0.lowercaseString)
+            pickerItem.title = $0
          
             return pickerItem
         }
+        if(defaults.isSet(K_GENDER)){
+            gender = defaults.getGender()
+            genderPicker.setItems(pickerItems)
+            genderPicker.setSelectedItemIndex(gender!)
+        }else{
         genderPicker.setItems(pickerItems)
         genderPicker.setSelectedItemIndex(1)
-
+        }
     }
     
     
@@ -49,10 +55,9 @@ class GenderInterfaceController: WKInterfaceController {
     
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        
         // Return data to be accessed in next interfaceController
-        defaults.setGender(gender!)
         usr.gender = gender
+        defaults.setGender(gender!)
         return usr
     }
     

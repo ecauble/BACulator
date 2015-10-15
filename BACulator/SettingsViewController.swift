@@ -14,7 +14,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     @IBOutlet weak var setGenderTextField: UITextField!
     @IBOutlet weak var setWeightTextField: UITextField!
-    @IBOutlet weak var robotImage: UIImageView!
     @IBOutlet weak var doneButton: ODShadowButton!
     
   
@@ -28,6 +27,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         // Do any additional setup after loading the view, typically from a nib.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         picker.delegate = self
@@ -117,8 +117,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                 (action) in
             }
             alertController.addAction(OKAction)
-            robotImage.image = UIImage(named: "bad-robot")
-            self.presentViewController(alertController, animated: true, completion: nil)
+             self.presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
@@ -140,8 +139,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
                 doneButton.hidden = false
                 doneButton.userInteractionEnabled = true
                 doneButton.backgroundColor = UIColor.greenColor()
-                robotImage.image = UIImage(named: "good-robot")
-            }
+             }
         }else{
             weightIsSet = false
         }

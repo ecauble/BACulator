@@ -89,7 +89,7 @@ class DefaultsManager: NSObject {
     func resetDefaults(){
         defaults.removeObjectForKey(K_GENDER)
         defaults.removeObjectForKey(K_WEIGHT)
-        defaults.removeObjectForKey(K_START_TIME)
+       // defaults.removeObjectForKey(K_START_TIME)
         defaults.removeObjectForKey(K_ABV)
         defaults.removeObjectForKey(K_DRINK_COUNT)
     }

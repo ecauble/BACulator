@@ -77,10 +77,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // return tabbarcontroller selected
                 switch shorchutItemType {
                 case .Add:
-                    tabbarController!.selectedViewController = tabbarController!.viewControllers?[0]
+                    tabbarController!.selectedViewController = tabbarController!.viewControllers?[1]
                     isHandled = true
                 case .Settings:
-                    tabbarController!.selectedViewController = tabbarController!.viewControllers?[1]
+                    tabbarController!.selectedViewController = tabbarController!.viewControllers?[2]
                     isHandled = true
 
                 }

@@ -20,28 +20,26 @@ class BACInterfaceController: WKInterfaceController {
     
     
     var usr = User()
-    var timer : NSTimer?
     var drinkCount : Int = 0
     var timeZone = NSTimeZone(name: "UTC")
-    var startTime : NSDate = NSDate()
-    var timeSinceStart = 0.0
-    let calc = Calculator()
-    let duration : NSTimeInterval = 1
-    let formatter:NSDateFormatter = NSDateFormatter()
     let defaults = DefaultsManager()
+    let calc = Calculator()
+    var startTime = NSTimeInterval()
+    var startDate : NSDate?
+    var timer : NSTimer = NSTimer()
+    let green = UIColor(rgba: "#6DFD6E")
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
         
-        addMenuItemWithImageNamed("reset-menu", title: "Reset Defaults", action: "resetDefaults")
-       
-    }
+        addMenuItemWithItemIcon(WKMenuItemIcon.Trash, title: "Reset",
+            action: "resetDefaults")    }
     
     func resetDefaults(){
         defaults.resetDefaults()
-        self.pushControllerWithName("genderViewController", context: nil)
+        self.popController()
     }
     
     
@@ -49,34 +47,40 @@ class BACInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        stopWatch.setDate(NSDate())
-        
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(duration, target: self, selector: "timerCount", userInfo: nil, repeats: true)
-        self.startTime = usr.startTime!
-        timer?.fire()
-        stopWatch.start()
-        
-     }
+      }
     
     
-    func timerCount() {
-        let time: NSDate = NSDate()
+    func updateTime() {
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
         
-        formatter.timeZone = timeZone
-        formatter.dateFormat = "h:mm a"
-        timeZone = NSTimeZone(name: "US/Eastern")
-        formatter.timeZone = timeZone
-        formatter.dateFormat = "h:mm a"
-        self.timeSinceStart = time.timeIntervalSinceDate(startTime) / 60 / 60
-        let BAC : Double = calc.calculateABV(usr.gender!, weight: usr.weight!, ABV: usr.beerABV!, timePassed: timeSinceStart, drinkCount: usr.drinkCount!)
+        //Find the difference between current time and start time.
+        var elapsedTime: NSTimeInterval = currentTime - startTime
         
-        BACLabel.setText("≅" + String(BAC))
-        if (calc.isOverLimit(BAC) == true){
-            BACLabel.setTextColor(UIColor.redColor())
-        }else{
-            BACLabel.setTextColor(UIColor.greenColor())
-        }
+        //calculate the minutes in elapsed time.
+        let minutes = UInt8(elapsedTime / 60.0)
+        elapsedTime -= (NSTimeInterval(minutes) * 60)
+        
+        
+        //calculate the seconds in elapsed time.
+        let seconds = UInt8(elapsedTime)
+        elapsedTime -= NSTimeInterval(seconds)
+       
+        //needed for BAC calculation
+        let timePassed = NSDate().timeIntervalSinceDate(startDate!) / 60 / 60
+        
+        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
+       // timerLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
+        let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:drinkCount)
 
+        BACLabel.setText("≅ " + (String(format: "%.5f", BAC)) + "%") 
+        if(calc.isNearLimit(BAC) == true){
+            BACLabel.setTextColor(UIColor.yellowColor())
+        }
+        else if (calc.isOverLimit(BAC) == true){
+           BACLabel.setTextColor(UIColor.redColor())
+        }else{
+            BACLabel.setTextColor(green)
+        }
     }
     
     
@@ -91,57 +95,44 @@ class BACInterfaceController: WKInterfaceController {
     
     
     @IBAction func stopStartPressed() {
-        
-    }
-    
-    
-    
-    
-    @IBAction func clearAndRest() {
-        timer?.invalidate()
-        stopWatch.stop()
-        usr.startTime = NSDate()
-        stopWatch.setDate(NSDate())
-        usr.drinkCount = 0
-        self.drinkCount = 0
-        usr.startTime = NSDate()
-        BACLabel.setText("≅ 0.0")
-        BACLabel.setTextColor(UIColor.whiteColor())
-        if defaults.isSet(K_DRINK_COUNT){
-            defaults.setValue(usr.drinkCount, forKey: K_DRINK_COUNT)
-            defaults.setValue(usr.startTime, forKey: K_START_TIME)
-        }else{
-           // self.pushControllerWithName("SwitchController", context: nil)
-
+        if (!timer.valid) {
+            stopWatch.start()
+            let aSelector : Selector = "updateTime"
+            timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+            startTime = NSDate.timeIntervalSinceReferenceDate()
+            startDate = NSDate()
+            startStopButton.setBackgroundColor(UIColor.redColor())
+            startStopButton.setTitle("Reset")
         }
+        else{
+            stopWatch.stop()
+            let newTime = NSDate()
+            stopWatch.setDate(newTime)
+            //stop and reset lables and variables
+            timer.invalidate()
+            startStopButton.setTitle("Start")
+            BACLabel.setText("≅ 0.00000%")
+            BACLabel.setTextColor(UIColor.whiteColor())
+            drinkCount = 0
+            countLabel.setText(String(drinkCount))
+            defaults.setDrinkCount(drinkCount)
+            startStopButton.setBackgroundColor(UIColor(rgba: "#6DFD6E"))
+            
+        }
+ 
     }
+    
+
     
     
     @IBAction func addDrinkCalc() {
-        
-        
-        
+   
         drinkCount++
-        usr.drinkCount = drinkCount
-        countLabel.setText(String(drinkCount))
-        defaults.setValue(usr.startTime, forKey: K_START_TIME)
-        defaults.setValue(usr.drinkCount, forKey: K_DRINK_COUNT)
-        let BAC : Double = calc.calculateABV(usr.gender!, weight: usr.weight!, ABV: usr.beerABV!, timePassed: timeSinceStart, drinkCount: usr.drinkCount!)
-
-        BACLabel.setText("≅" + String(BAC))
-        if (calc.isOverLimit(BAC) == true){
-            BACLabel.setTextColor(UIColor.redColor())
-        }else{
-            BACLabel.setTextColor(UIColor.greenColor())
-        }
+        countLabel.setText("\(drinkCount)")
         defaults.setDrinkCount(drinkCount)
-        defaults.sync()
     }
     
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
+  
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible

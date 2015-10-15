@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A1310EC21BC64E1C00471C35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC11BC64E1C00471C35 /* User.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
-		A1310EC81BC6648C00471C35 /* BACTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC71BC6648C00471C35 /* BACTimer.swift */; settings = {ASSET_TAGS = (); }; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */; settings = {ASSET_TAGS = (); }; };
 		A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165CB541BCAABA4006C869F /* DefaultsManager.swift */; settings = {ASSET_TAGS = (); }; };
@@ -17,6 +16,7 @@
 		A17FBB641BC8B523008FEA91 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17FBB631BC8B523008FEA91 /* Media.xcassets */; settings = {ASSET_TAGS = (); }; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */; settings = {ASSET_TAGS = (); }; };
+		A1A11E051BCF3A6B00BB73E2 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E041BCF3A6B00BB73E2 /* SwitchController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */; };
 		A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */; };
 		A1AAB0311BC5F45F004954F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB02F1BC5F45F004954F1 /* Main.storyboard */; };
@@ -37,6 +37,8 @@
 		A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB12061BC704330062E3FE /* ODUIImageView.swift */; settings = {ASSET_TAGS = (); }; };
 		A1BB120A1BC713A20062E3FE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB12091BC713A20062E3FE /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A1BB120C1BC718BA0062E3FE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB120B1BC718BA0062E3FE /* Calculator.swift */; settings = {ASSET_TAGS = (); }; };
+		A1C0F4FC1BCF5D79008E4CDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0F4FB1BCF5D79008E4CDB /* User.swift */; settings = {ASSET_TAGS = (); }; };
+		A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0F4FD1BCF747D008E4CDB /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F12E611BCE225C00C79018 /* StringExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1761BCDDEBF00660601 /* Calculator.swift */; settings = {ASSET_TAGS = (); }; };
 		A1F6E1791BCDDEDF00660601 /* DrinkSetupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */; settings = {ASSET_TAGS = (); }; };
@@ -102,7 +104,6 @@
 /* Begin PBXFileReference section */
 		A1310EC11BC64E1C00471C35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
-		A1310EC71BC6648C00471C35 /* BACTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACTimer.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
 		A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		A165CB541BCAABA4006C869F /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		A17FBB631BC8B523008FEA91 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
 		A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODRoundButton.swift; sourceTree = "<group>"; };
+		A1A11E041BCF3A6B00BB73E2 /* SwitchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
 		A1AAB0281BC5F45F004954F1 /* BACulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BACulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACulateViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		A1BB12061BC704330062E3FE /* ODUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODUIImageView.swift; sourceTree = "<group>"; };
 		A1BB12091BC713A20062E3FE /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A1BB120B1BC718BA0062E3FE /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		A1C0F4FB1BCF5D79008E4CDB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A1C0F4FD1BCF747D008E4CDB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A1F12E611BCE225C00C79018 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A1F6E1761BCDDEBF00660601 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSetupInterfaceController.swift; sourceTree = "<group>"; };
@@ -207,11 +211,13 @@
 				A1BB12081BC704510062E3FE /* Styles */,
 				A1F12E631BCE228900C79018 /* Extensions */,
 				A165CB541BCAABA4006C869F /* DefaultsManager.swift */,
+				A1A11E041BCF3A6B00BB73E2 /* SwitchController.swift */,
+				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
 				A1BB12091BC713A20062E3FE /* SettingsViewController.swift */,
 				A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */,
 				A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */,
 				A1BB120B1BC718BA0062E3FE /* Calculator.swift */,
-				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
+				A1C0F4FB1BCF5D79008E4CDB /* User.swift */,
 				A1AAB02F1BC5F45F004954F1 /* Main.storyboard */,
 				A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */,
 				A1BB12041BC701D70062E3FE /* Assets.xcassets */,
@@ -251,14 +257,14 @@
 		A1AAB0631BC5F45F004954F1 /* BACulator WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A1C0F4FD1BCF747D008E4CDB /* UIColorExtension.swift */,
 				A1AAB0681BC5F45F004954F1 /* ExtensionDelegate.swift */,
 				A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */,
 				A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */,
 				A1AAB09D1BC6179A004954F1 /* BodySetupInterfaceController.swift */,
-				A1310EC71BC6648C00471C35 /* BACTimer.swift */,
+				A1310EC91BC6695200471C35 /* BACInterfaceController.swift */,
 				A1F6E1761BCDDEBF00660601 /* Calculator.swift */,
 				A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */,
-				A1310EC91BC6695200471C35 /* BACInterfaceController.swift */,
 				A1310EC11BC64E1C00471C35 /* User.swift */,
 				A1AAB06A1BC5F45F004954F1 /* NotificationController.swift */,
 				A1AAB06C1BC5F45F004954F1 /* ComplicationController.swift */,
@@ -509,9 +515,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C0F4FC1BCF5D79008E4CDB /* User.swift in Sources */,
 				A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */,
 				A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
+				A1A11E051BCF3A6B00BB73E2 /* SwitchController.swift in Sources */,
 				A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */,
 				A1BB12031BC6FFB40062E3FE /* ODShadowButton.swift in Sources */,
 				A1F6E17B1BCDFBCF00660601 /* UIColorExtension.swift in Sources */,
@@ -544,11 +552,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1F6E1791BCDDEDF00660601 /* DrinkSetupInterfaceController.swift in Sources */,
-				A1310EC81BC6648C00471C35 /* BACTimer.swift in Sources */,
 				A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */,
 				A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */,
 				A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */,
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
+				A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,
 				A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */,
 				A1AAB06D1BC5F45F004954F1 /* ComplicationController.swift in Sources */,

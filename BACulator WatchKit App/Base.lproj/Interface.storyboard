@@ -1,38 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f9x-cp-GPc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Au0-Pj-Pgr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="8092"/>
     </dependencies>
     <scenes>
-        <!--SwitchController-->
-        <scene sceneID="wOa-y2-6MT">
-            <objects>
-                <controller identifier="SwitchController" hidesWhenLoading="NO" id="f9x-cp-GPc" customClass="SwitchInterfaceController" customModule="BACulator_WatchKit_Extension">
-                    <items>
-                        <label height="48.5" alignment="center" text="BACulator" id="cIS-M5-f8K">
-                            <fontDescription key="font" type="system" weight="black" pointSize="16"/>
-                        </label>
-                        <imageView width="45" height="62" alignment="center" verticalAlignment="center" image="glass" id="nfC-85-jOd"/>
-                        <button width="1" alignment="left" title="Button" id="lmw-Ll-TuN">
-                            <connections>
-                                <action selector="buttonPressed" destination="f9x-cp-GPc" id="lUg-Sg-yFW"/>
-                            </connections>
-                        </button>
-                    </items>
-                    <color key="backgroundColor" red="0.42745098040000001" green="0.51764705879999995" blue="0.70588235290000001" alpha="1" colorSpace="calibratedRGB"/>
-                </controller>
-            </objects>
-            <point key="canvasLocation" x="-49" y="22"/>
-        </scene>
-        <!--BACViewController-->
+        <!--SetBACIC-->
         <scene sceneID="caS-DG-9zD">
             <objects>
-                <controller identifier="BACViewController" hidesWhenLoading="NO" id="X5A-RT-DaH" customClass="BACInterfaceController" customModule="BACulator_WatchKit_Extension">
+                <controller identifier="SetBACIC" hidesWhenLoading="NO" id="X5A-RT-DaH" customClass="BACInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
+                        <separator alignment="left" id="sbr-Fo-nOS"/>
                         <group width="1" alignment="left" id="HIF-aB-rH6">
                             <items>
-                                <button width="43" height="17.5" alignment="left" title="Start" id="KlZ-Bw-Cz5">
+                                <button width="58" height="17.5" alignment="left" verticalAlignment="center" title="Start" id="KlZ-Bw-Cz5">
                                     <accessibilityTraits key="accessibilityTraits" button="YES" playsSound="YES"/>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,21 +22,21 @@
                                         <action selector="stopStartPressed" destination="X5A-RT-DaH" id="U5Z-Fb-Ne1"/>
                                     </connections>
                                 </button>
-                                <timer width="89" alignment="right" textAlignment="center" id="L7Y-24-VPB">
+                                <timer width="76" alignment="right" verticalAlignment="center" textAlignment="center" id="L7Y-24-VPB">
                                     <color key="textColor" red="0.62745098040000002" green="0.68235294120000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" type="italicSystem" pointSize="17"/>
                                 </timer>
                             </items>
                         </group>
                         <separator alignment="left" id="fud-Zb-zor"/>
-                        <label width="136" height="26.5" alignment="center" text="BAC% " textAlignment="center" id="bh8-9c-Qgb">
+                        <label width="136" height="26.5" alignment="center" verticalAlignment="center" text="BAC " textAlignment="center" id="bh8-9c-Qgb">
                             <fontDescription key="font" type="system" weight="heavy" pointSize="19"/>
                         </label>
-                        <label width="136" height="45.5" alignment="center" text="≅ 0.00000" textAlignment="center" id="m5R-5O-f2J">
+                        <label width="136" height="45.5" alignment="center" verticalAlignment="center" text="≅ 0.0000%" textAlignment="center" id="m5R-5O-f2J">
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="font" type="system" weight="black" pointSize="25"/>
+                            <fontDescription key="font" type="system" weight="black" pointSize="23"/>
                         </label>
-                        <button alignment="left" id="CGD-xO-6wZ">
+                        <button alignment="center" verticalAlignment="bottom" id="CGD-xO-6wZ">
                             <group key="contentGroup" width="1" height="41" alignment="left" id="Cmj-Be-aXV">
                                 <items>
                                     <label width="24" height="26" alignment="center" verticalAlignment="center" text="┼" textAlignment="center" id="znC-GS-cpm">
@@ -84,19 +65,21 @@
             </objects>
             <point key="canvasLocation" x="690" y="264"/>
         </scene>
-        <!--genderViewController-->
+        <!--SetGenderIC-->
         <scene sceneID="OwF-Kk-Gp9">
             <objects>
-                <controller identifier="genderViewController" hidesWhenLoading="NO" id="Au0-Pj-Pgr" customClass="GenderInterfaceController" customModule="BACulator_WatchKit_Extension">
+                <controller identifier="SetGenderIC" hidesWhenLoading="NO" id="Au0-Pj-Pgr" customClass="GenderInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Set Gender" id="9UY-KS-F2y"/>
+                        <label alignment="left" text="Set Gender" id="9UY-KS-F2y">
+                            <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                         <picker width="1" height="87" alignment="left" focusStyle="stack" id="4Vq-y1-lc8">
                             <accessibilityTraits key="accessibilityTraits" image="YES" updatesFrequently="YES" adjustable="YES"/>
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="Au0-Pj-Pgr" id="MYn-yq-lUr"/>
                             </connections>
                         </picker>
-                        <button width="1" alignment="left" title="Done" id="jhT-aG-A63">
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="jhT-aG-A63">
                             <connections>
                                 <segue destination="Hgo-xb-ab1" kind="modal" identifier="showWeight" id="6aw-wS-QBg"/>
                             </connections>
@@ -109,18 +92,20 @@
             </objects>
             <point key="canvasLocation" x="-49" y="264.5"/>
         </scene>
-        <!--Body Setup Interface Controller-->
+        <!--SetWeightIC-->
         <scene sceneID="Yeg-Dc-s0v">
             <objects>
-                <controller hidesWhenLoading="NO" id="Hgo-xb-ab1" customClass="BodySetupInterfaceController" customModule="BACulator_WatchKit_Extension">
+                <controller identifier="SetWeightIC" hidesWhenLoading="NO" id="Hgo-xb-ab1" customClass="BodySetupInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Set Body Weight" id="b8Q-La-pAK"/>
+                        <label alignment="left" text="Set Body Weight" id="b8Q-La-pAK">
+                            <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                         <picker width="1" height="84" alignment="left" focusStyle="stack" id="5rH-fs-jPL">
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="Hgo-xb-ab1" id="hB4-Qb-2bz"/>
                             </connections>
                         </picker>
-                        <button width="1" alignment="left" title="Done" id="ufP-p1-fue">
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="ufP-p1-fue">
                             <connections>
                                 <segue destination="H08-97-gYE" kind="modal" identifier="showBeer" id="uEj-uB-eql"/>
                             </connections>
@@ -133,20 +118,22 @@
             </objects>
             <point key="canvasLocation" x="205" y="264"/>
         </scene>
-        <!--Drink Setup Interface Controller-->
+        <!--SetDrinkIC-->
         <scene sceneID="9fI-lQ-s29">
             <objects>
-                <controller hidesWhenLoading="NO" id="H08-97-gYE" customClass="DrinkSetupInterfaceController" customModule="BACulator_WatchKit_Extension">
+                <controller identifier="SetDrinkIC" hidesWhenLoading="NO" id="H08-97-gYE" customClass="DrinkSetupInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Pick Beer" id="BSM-QV-tLU"/>
+                        <label alignment="left" text="Pick Beer" id="BSM-QV-tLU">
+                            <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
                         <picker width="1" height="86" alignment="left" focusStyle="stack" id="bkg-np-AbA">
                             <connections>
                                 <action selector="pickerSelectedItemChanged:" destination="H08-97-gYE" id="Vk2-uH-7Ud"/>
                             </connections>
                         </picker>
-                        <button width="1" alignment="left" title="Done" id="tbQ-WJ-mZ8">
+                        <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="tbQ-WJ-mZ8">
                             <connections>
-                                <segue destination="X5A-RT-DaH" kind="push" identifier="showBAC" id="Sgm-Fy-keO"/>
+                                <segue destination="X5A-RT-DaH" kind="modal" identifier="showBAC" id="Sgm-Fy-keO"/>
                             </connections>
                         </button>
                     </items>
