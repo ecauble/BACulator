@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var setGenderTextField: UITextField!
     @IBOutlet weak var setWeightTextField: UITextField!
     @IBOutlet weak var robotImage: UIImageView!
-    @IBOutlet weak var doneButton: ODButton!
+    @IBOutlet weak var doneButton: ODShadowButton!
     
   
     let defaults = DefaultsManager()

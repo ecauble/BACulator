@@ -16,7 +16,7 @@ class BACulateViewController: UIViewController {
     @IBOutlet weak var BACLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var beerCountLabel: UILabel!
-    @IBOutlet weak var startStopButton: UIButton!
+    @IBOutlet weak var startStopButton: ODRoundButton!
     
     
     private var counterData : Int?
@@ -52,8 +52,14 @@ class BACulateViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
       
+        imageView.clipsToBounds = false
+        imageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        imageView.layer.shadowOffset = CGSize.init(width: 3, height: 3)
         beerCountLabel.text = String(beerCounter)
         defaults.sync()
+        BACLabel.shadowColor = UIColor.blackColor()
+        BACLabel.layer.shadowOpacity = 0.5
+        BACLabel.shadowOffset = CGSize.init(width: 3, height: 3)
         beerCountLabel.shadowColor = UIColor.lightGrayColor()
         beerCountLabel.shadowOffset = CGSize.init(width: 3, height: 3)
         if(defaults.isSet(K_DRINK_COUNT)){
@@ -129,7 +135,10 @@ class BACulateViewController: UIViewController {
         let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:beerCounter)
     
         BACLabel.text = "≅ " + (String(format: "%.7f", BAC)) + "%"
-        if (calc.isOverLimit(BAC) == true){
+        if(calc.isNearLimit(BAC) == true){
+            BACLabel.textColor = UIColor.yellowColor()
+        }
+        else if (calc.isOverLimit(BAC) == true){
             BACLabel.textColor = UIColor.redColor()
         }else{
             BACLabel.textColor = green
