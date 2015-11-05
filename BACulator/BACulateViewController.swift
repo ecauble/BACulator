@@ -21,7 +21,6 @@ class BACulateViewController: UIViewController {
     
     private var data : NSObject?
     
-    private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
     var beerCounter : Int = 0
     let defaults = DefaultsManager()
     let calc = Calculator()
@@ -30,25 +29,10 @@ class BACulateViewController: UIViewController {
     var startDate : NSDate?
     var timer:NSTimer = NSTimer()
     let green = UIColor(rgba: "#6DFD6E")
+    var images: [UIImage] = []
  
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        configureWCSession()
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        
-        configureWCSession()
-    }
-    
-    private func configureWCSession() {
-        session?.delegate = self;
-        session?.activateSession()
-    }
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +40,7 @@ class BACulateViewController: UIViewController {
       
         imageView.clipsToBounds = false
         imageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        imageView.layer.shadowRadius = 5.0
         imageView.layer.shadowOffset = CGSize.init(width: 3, height: 3)
         beerCountLabel.text = String(beerCounter)
         defaults.sync()
@@ -70,22 +55,13 @@ class BACulateViewController: UIViewController {
             beerCounter = 0
         }
         
-        let a = defaults.getGender()
-        let b = defaults.getABV()
-        let c = defaults.getDrinkCount()
-        let d = defaults.getDrinkSelectionRow()
-        //let e = defaults.getStartTime()
-        let f = defaults.getWeight()
+        //load images array for animation
+        for i in 1 ... 12{
+            images.append(UIImage(named: "beer-glass-anim-\(i)")!)
+            
+        }
         
-        
-        print("gender \(a) weight \(f) abv \(b)  drinkCount \(c)  row \(d)")
-        
-        for(var i = 0; i < 13 ; i++){
-            imageView.animationImages?.append(UIImage(named: "beer-glass-anim-\(i)")!)
-         }
-        
-        imageView.animationImages = [UIImage(named: "beer-glass-anim-1")!,UIImage(named: "beer-glass-anim-2")!,UIImage(named: "beer-glass-anim-3")!,UIImage(named: "beer-glass-anim-4")!,UIImage(named: "beer-glass-anim-5")!,UIImage(named: "beer-glass-anim-6")!,UIImage(named: "beer-glass-anim-7")!,UIImage(named: "beer-glass-anim-8")!,UIImage(named: "beer-glass-anim-9")!,UIImage(named: "beer-glass-anim-10")!,UIImage(named: "beer-glass-anim-11")!,UIImage(named: "beer-glass-anim-12")!]
-        //55 seconds to go through a full animation in one minute
+        imageView.animationImages = images
         imageView.animationDuration = 60.0
      
        // stopWatch.start()
@@ -186,21 +162,4 @@ class BACulateViewController: UIViewController {
 
 
 
-
-// MARK: WCSessionDelegate
-extension BACulateViewController: WCSessionDelegate {
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        
-        //Use this to update the UI instantaneously (otherwise, takes a little while)
-        dispatch_async(dispatch_get_main_queue()) {
-            if let userValue = message["user"] as? NSObject {
-                print("\(userValue.description)")
-                self.data = userValue
-                self.beerCountLabel.text = String(userValue.valueForKey(K_DRINK_COUNT))
-            }
-        }
-    }
-    
-}//ends extension
 

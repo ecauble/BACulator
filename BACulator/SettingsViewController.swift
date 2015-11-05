@@ -22,11 +22,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     let pickerData = ["Male","Female","Undefined"]
     let imageArray = ["769-male", "768-female", "779-users"]
     var genderSelection : Int = 2
-    var rowIsSet = false
-    var weightIsSet = false
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+     
       
         // Do any additional setup after loading the view, typically from a nib.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
@@ -36,7 +36,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         setWeightTextField.delegate = self
         doneButton.hidden = true
         doneButton.userInteractionEnabled = false
-        print((setWeightTextField.text)?.toDouble())
         
         if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
             genderSelection = defaults.getGender()
@@ -69,12 +68,19 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         genderSelection = row
         setGenderTextField.text = pickerData[row]
+        
         let image = UIImage(named: imageArray[row])
         let imageView = UIImageView(image: image)
-        changeColorForGender(row)
+        for view in setGenderTextField.subviews{
+            if (view is UIImageView) {
+                view.removeFromSuperview()
+            }
+        }
         setGenderTextField.addSubview(imageView)
-        rowIsSet = true
+        changeColorForGender(row)
     }
+    
+   
     
     func changeColorForGender(row : Int){
         switch row {
@@ -96,26 +102,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     @IBAction func doneButtonWasPressed(sender: AnyObject) {
-        if(rowIsSet && weightIsSet){
             defaults.setGender(genderSelection)
             if let weight = setWeightTextField.text?.toDouble(){
                 defaults.setWeight(weight)
                 defaults.setGender(genderSelection)
-            }
-        }
-        else
-        {
-        doneButton.backgroundColor = UIColor.redColor()
-            let alertController = UIAlertController(title: "Need input!", message: "Please pick gender and set weight", preferredStyle: .Alert)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) {
+            }else{
+                doneButton.backgroundColor = UIColor.redColor()
+                let alertController = UIAlertController(title: "Need input!", message:
+                    "Please pick gender and set weight", preferredStyle: .Alert);
+                let OKAction = UIAlertAction(title: "OK", style: .Default) {
                 (action) in
-                
-            }
-            alertController.addAction(cancelAction)
-            let OKAction = UIAlertAction(title: "OK", style: .Default) {
-                (action) in
-            }
+                }
             alertController.addAction(OKAction)
              self.presentViewController(alertController, animated: true, completion: nil)
         }
@@ -133,17 +130,12 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        if(setWeightTextField.text != nil){
-            weightIsSet = true
-            if(rowIsSet){
-                doneButton.hidden = false
-                doneButton.userInteractionEnabled = true
-                doneButton.backgroundColor = UIColor.greenColor()
-             }
-        }else{
-            weightIsSet = false
+        if(setWeightTextField.text != nil && setGenderTextField.text != nil){
+            doneButton.hidden = false
+            doneButton.userInteractionEnabled = true
+            doneButton.backgroundColor = UIColor.greenColor()
+            setWeightTextField.resignFirstResponder()
+            setGenderTextField.resignFirstResponder()
         }
-        setWeightTextField.resignFirstResponder()
     }
-    
 }

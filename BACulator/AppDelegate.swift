@@ -12,9 +12,10 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let defaults = DefaultsManager()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         // set if app launched from shorcut with boolean
         var appLaunchedFromShortCut = false
         // check current shortcut item
@@ -22,8 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             appLaunchedFromShortCut = true
             QuickActionsForItem(currentShorcutItem)
         }
- 
-        // return false if app already launched
+        
+        let rootNavigationController = window!.rootViewController as? UINavigationController
+        let tabbarController = window!.rootViewController as? UITabBarController
+       
+        // if needed pop to root view controller
+        rootNavigationController?.popToRootViewControllerAnimated(false)
+        
+        // navigate to proper view controller after reading defaults
+        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
+            tabbarController!.selectedViewController = tabbarController!.viewControllers?[1]
+        }
+        else{
+            tabbarController!.selectedViewController = tabbarController!.viewControllers?[0]
+        }
         return !appLaunchedFromShortCut
     }
 
@@ -48,6 +61,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+   
+    
 }
     //MARK: - Handle QuickActions For ShorCut Items -> AppDelegate Extension
     typealias HandleForShorCutItem = AppDelegate
@@ -59,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case Add =          "quickactions.BACulator.add"
        
         }
+        
         
         /// Shortcut Item, also called a Home screen dynamic quick action, specifies a user-initiated action for app.
         func QuickActionsForItem(shortcutItem: UIApplicationShortcutItem) -> Bool {

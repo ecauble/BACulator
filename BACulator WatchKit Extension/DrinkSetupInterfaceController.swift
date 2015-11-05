@@ -25,12 +25,11 @@ class DrinkSetupInterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
         if let val: User = context as? User {
-            print("passed value = \(val.weight)")
-            self.usr = val
+             self.usr = val
         }
         else{
-            print("no value was set")
-        }
+            //no val set
+         }
     }
     
     override func willActivate() {

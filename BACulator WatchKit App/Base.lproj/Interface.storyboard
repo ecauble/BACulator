@@ -36,6 +36,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="font" type="system" weight="black" pointSize="23"/>
                         </label>
+                        <separator alignment="center" verticalAlignment="bottom" id="dQp-ki-f50"/>
                         <button alignment="center" verticalAlignment="bottom" id="CGD-xO-6wZ">
                             <group key="contentGroup" width="1" height="41" alignment="left" id="Cmj-Be-aXV">
                                 <items>
@@ -43,7 +44,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="font" type="system" weight="heavy" pointSize="16"/>
                                     </label>
-                                    <imageView width="24" height="36" alignment="center" verticalAlignment="center" image="glass" id="Opt-Hi-h0P"/>
+                                    <imageView width="24" height="31" alignment="center" verticalAlignment="center" image="beer-glass-anim-0" id="Opt-Hi-h0P"/>
                                     <label alignment="center" verticalAlignment="center" text="0" textAlignment="center" id="hEq-nG-3ef">
                                         <fontDescription key="font" type="system" pointSize="19"/>
                                     </label>
@@ -63,7 +64,19 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="690" y="264"/>
+            <point key="canvasLocation" x="690" y="263.75"/>
+        </scene>
+        <!--SwitchIC-->
+        <scene sceneID="Wx7-aI-BuF">
+            <objects>
+                <controller identifier="SwitchIC" hidesWhenLoading="NO" id="w79-PD-Zdf" customClass="SwitchInterfaceController" customModule="BACulator_WatchKit_Extension">
+                    <items>
+                        <button width="1" alignment="left" title="Gender" id="oES-nV-4yR"/>
+                        <button width="1" alignment="left" title="BAC" id="3gm-Ux-ene"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-43" y="30"/>
         </scene>
         <!--SetGenderIC-->
         <scene sceneID="OwF-Kk-Gp9">

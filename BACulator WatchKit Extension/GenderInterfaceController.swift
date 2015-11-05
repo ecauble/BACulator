@@ -42,6 +42,8 @@ class GenderInterfaceController: WKInterfaceController {
             gender = defaults.getGender()
             genderPicker.setItems(pickerItems)
             genderPicker.setSelectedItemIndex(gender!)
+            //need to find solution to jump between interface controllers
+            //self.presentControllerWithName("SetBACIC", context: self.usr)
         }else{
         genderPicker.setItems(pickerItems)
         genderPicker.setSelectedItemIndex(1)

@@ -6,15 +6,6 @@
 //  Copyright © 2015 Oopie Doopie. All rights reserved.
 //
 
-import Foundation
-//
-//  UIColorExtension.swift
-//  BACulator
-//
-//  Created by Eric Cauble on 10/13/15.
-//  Copyright © 2015 Oopie Doopie. All rights reserved.
-//
-
 import UIKit
 
 public extension UIColor {

@@ -44,6 +44,10 @@ class DefaultsManager: NSObject {
         defaults.setInteger(drinkCount, forKey: K_DRINK_COUNT)
     }
     
+    func setDrinkArray(drinkArray : [AnyObject]){
+        defaults.arrayForKey(K_DRINK_ARRAY)
+    }
+    
     
     //accessors
     func getGender() -> Int{
@@ -70,6 +74,9 @@ class DefaultsManager: NSObject {
         return (defaults.integerForKey(K_DRINK_SELECTION_ROW))
     }
  
+    func getDrinkArray() -> Array<AnyObject>{
+        return (defaults.arrayForKey(K_DRINK_ARRAY))!
+    }
     
     //class functions
     func isSet(key : String) -> Bool{
@@ -102,3 +109,4 @@ let K_ABV           = "k_ABV"
 let K_START_TIME    = "k_startTime"
 let K_DRINK_COUNT   = "k_drinkCount"
 let K_DRINK_SELECTION_ROW = "K_drinkSelectionRow"
+let K_DRINK_ARRAY = "k_drinkArray"

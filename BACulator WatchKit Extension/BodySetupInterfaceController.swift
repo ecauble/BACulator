@@ -19,16 +19,17 @@ class BodySetupInterfaceController: WKInterfaceController {
     var usr = User()
     let defaults = DefaultsManager()
     
+    
+    
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         if let val: User = context as? User {
-            print("passed value = \(val.gender)")
-            self.usr = val
+             self.usr = val
         }
         else{
-            print("no value was set")
-        }
-           }
+         }
+    }
 
     
     override func willActivate() {
