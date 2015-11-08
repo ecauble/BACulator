@@ -17,6 +17,7 @@ class BACulateViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var beerCountLabel: UILabel!
     @IBOutlet weak var startStopButton: ODRoundButton!
+    @IBOutlet var addDrinkButton: ODRoundButton!
     
     
     private var data : NSObject?
@@ -63,13 +64,16 @@ class BACulateViewController: UIViewController {
         
         imageView.animationImages = images
         imageView.animationDuration = 60.0
-     
-       // stopWatch.start()
+        startStopButton.hidden = true
     }
 
 
 
-    @IBAction func addBeer(sender: AnyObject) {
+    @IBAction func addDrinkPressed(sender: AnyObject) {
+        if(self.beerCounter < 1){
+        startStopButtonPressed(self)
+        startStopButton.hidden = false
+        }
         beerCounter++
         beerCountLabel.text =  "\(beerCounter)"
         defaults.setDrinkCount(beerCounter)
@@ -145,6 +149,7 @@ class BACulateViewController: UIViewController {
             defaults.setDrinkCount(beerCounter)
             startStopButton.backgroundColor = UIColor(rgba: "#6DFD6E")
             imageView.stopAnimating()
+            startStopButton.hidden = true
         }
     
     }

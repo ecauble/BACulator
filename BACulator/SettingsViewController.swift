@@ -26,14 +26,16 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
       
         // Do any additional setup after loading the view, typically from a nib.
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
         picker.delegate = self
         picker.dataSource = self
+        
         setGenderTextField.inputView = picker
         setWeightTextField.delegate = self
+        
         doneButton.hidden = true
         doneButton.userInteractionEnabled = false
         
@@ -71,11 +73,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         let image = UIImage(named: imageArray[row])
         let imageView = UIImageView(image: image)
-        for view in setGenderTextField.subviews{
-            if (view is UIImageView) {
-                view.removeFromSuperview()
-            }
-        }
+//        for view in setGenderTextField.subviews{
+//            if (view is UIImageView) {
+//                view.removeFromSuperview()
+//            }
+//        }
         setGenderTextField.addSubview(imageView)
         changeColorForGender(row)
     }
@@ -137,5 +139,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             setWeightTextField.resignFirstResponder()
             setGenderTextField.resignFirstResponder()
         }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }

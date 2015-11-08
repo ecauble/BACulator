@@ -10,6 +10,8 @@
 		A1310EC21BC64E1C00471C35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC11BC64E1C00471C35 /* User.swift */; };
 		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; };
+		A13C97141BEBE0A900B83CCA /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97131BEBE0A900B83CCA /* digital-7.ttf */; };
+		A13C97161BEBE0B700B83CCA /* SUBWT___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */; };
 		A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */; };
 		A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165CB541BCAABA4006C869F /* DefaultsManager.swift */; };
 		A179E69C1BCE097800EE0C1D /* CustomDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */; };
@@ -42,6 +44,7 @@
 		A1BDD4581BEAD41300C851E8 /* CustomDrinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1BDD4571BEAD41300C851E8 /* CustomDrinkCell.xib */; };
 		A1C0F4FC1BCF5D79008E4CDB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0F4FB1BCF5D79008E4CDB /* User.swift */; };
 		A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0F4FD1BCF747D008E4CDB /* UIColorExtension.swift */; };
+		A1D80D991BEDA02A009E119E /* UICalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D80D981BEDA02A009E119E /* UICalculator.swift */; };
 		A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F12E611BCE225C00C79018 /* StringExtension.swift */; };
 		A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1761BCDDEBF00660601 /* Calculator.swift */; };
 		A1F6E1791BCDDEDF00660601 /* DrinkSetupInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */; };
@@ -108,6 +111,8 @@
 		A1310EC11BC64E1C00471C35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
+		A13C97131BEBE0A900B83CCA /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
+		A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUBWT___.ttf"; sourceTree = "<group>"; };
 		A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		A165CB541BCAABA4006C869F /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +154,7 @@
 		A1BDD4571BEAD41300C851E8 /* CustomDrinkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomDrinkCell.xib; sourceTree = "<group>"; };
 		A1C0F4FB1BCF5D79008E4CDB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A1C0F4FD1BCF747D008E4CDB /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A1D80D981BEDA02A009E119E /* UICalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICalculator.swift; sourceTree = "<group>"; };
 		A1F12E611BCE225C00C79018 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A1F6E1761BCDDEBF00660601 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkSetupInterfaceController.swift; sourceTree = "<group>"; };
@@ -187,6 +193,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A13C97171BEBEE3500B83CCA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */,
+				A13C97131BEBE0A900B83CCA /* digital-7.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		A14EE66E1BD7F57100CA49D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +245,16 @@
 				A14EE66E1BD7F57100CA49D9 /* Models */,
 				A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */,
 				A1BB12091BC713A20062E3FE /* SettingsViewController.swift */,
+				A1D80D981BEDA02A009E119E /* UICalculator.swift */,
 				A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */,
 				A1BDD4551BEAD2B400C851E8 /* CustomDrinkCell.swift */,
 				A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */,
 				A1AAB02F1BC5F45F004954F1 /* Main.storyboard */,
 				A1BDD4571BEAD41300C851E8 /* CustomDrinkCell.xib */,
 				A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */,
-				A1BB12041BC701D70062E3FE /* Assets.xcassets */,
 				A1AAB0371BC5F45F004954F1 /* Info.plist */,
+				A1BB12041BC701D70062E3FE /* Assets.xcassets */,
+				A13C97171BEBEE3500B83CCA /* Fonts */,
 			);
 			path = BACulator;
 			sourceTree = "<group>";
@@ -505,8 +522,10 @@
 			files = (
 				A1AAB0361BC5F45F004954F1 /* LaunchScreen.storyboard in Resources */,
 				A1BB12051BC701D70062E3FE /* Assets.xcassets in Resources */,
+				A13C97161BEBE0B700B83CCA /* SUBWT___.ttf in Resources */,
 				A1BDD4581BEAD41300C851E8 /* CustomDrinkCell.xib in Resources */,
 				A1AAB0311BC5F45F004954F1 /* Main.storyboard in Resources */,
+				A13C97141BEBE0A900B83CCA /* digital-7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +573,7 @@
 				A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */,
 				A1BDD4561BEAD2B400C851E8 /* CustomDrinkCell.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
+				A1D80D991BEDA02A009E119E /* UICalculator.swift in Sources */,
 				A1F12E621BCE225C00C79018 /* StringExtension.swift in Sources */,
 				A1BB12031BC6FFB40062E3FE /* ODShadowButton.swift in Sources */,
 				A19512021BE2F3DD00639E23 /* BACTimer.swift in Sources */,

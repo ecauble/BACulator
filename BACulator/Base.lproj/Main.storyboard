@@ -2,8 +2,17 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9HQ-Ub-e4C">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="digital-7.ttf">
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+            <string>Digital-7</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Settings-->
         <scene sceneID="fTR-Yt-HCB">
@@ -17,138 +26,425 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01g-Zd-mFa">
-                                <rect key="frame" x="220" y="20" width="160" height="27"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="Azh-UQ-23J"/>
-                                    <constraint firstAttribute="height" constant="27" id="DXD-U2-l3O"/>
-                                    <constraint firstAttribute="height" constant="27" id="UQR-nl-of9"/>
-                                    <constraint firstAttribute="width" constant="160" id="urj-TG-lXg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="UQR-nl-of9"/>
-                                        <exclude reference="urj-TG-lXg"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Azh-UQ-23J"/>
-                                        <exclude reference="DXD-U2-l3O"/>
-                                        <include reference="UQR-nl-of9"/>
-                                        <include reference="urj-TG-lXg"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Set Gender" borderStyle="roundedRect" placeholder="Set Gender" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-CH-g8L">
-                                <rect key="frame" x="234" y="55" width="131" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.62745098040000002" green="0.68235294120000001" blue="0.79215686269999996" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="131" id="AEI-qU-ebU"/>
-                                    <constraint firstAttribute="width" constant="131" id="Zch-Es-Mfb"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="AEI-qU-ebU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="AEI-qU-ebU"/>
-                                        <exclude reference="Zch-Es-Mfb"/>
-                                    </mask>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set weight (lbs)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YR1-HH-Avl">
-                                <rect key="frame" x="234" y="93" width="131" height="30"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.83921568629999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qqq-EA-RKo" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
-                                <rect key="frame" x="234" y="131" width="131" height="30"/>
+                                <rect key="frame" x="156" y="379" width="286" height="60"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="DV7-sL-Bdv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="172" width="560" height="0.0"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="57" y="549" width="287" height="260"/>
+                                </variation>
                                 <connections>
                                     <action selector="doneButtonWasPressed:" destination="GJd-LW-ZNq" eventType="touchUpInside" id="kkU-lz-02r"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set weight (lbs)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YR1-HH-Avl">
+                                <rect key="frame" x="157" y="108" width="286" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="P7O-oD-0Jm"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="_placeholderLabel.textColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="57" y="108" width="286" height="30"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="450" y="73" width="286" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="278" width="286" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lE-6z-JQw" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="157" y="152" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="A6N-9X-PFd"/>
+                                    <constraint firstAttribute="height" constant="60" id="Zyb-yg-3C0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="lVb-rY-6Bt"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="vpk-uV-Hsh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="45" y="205" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="450" y="117" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="322" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KbO-Ih-nqz" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="233" y="152" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Mgf-Jn-e98"/>
+                                    <constraint firstAttribute="width" constant="60" id="PhH-9X-cKz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="xGZ-0H-aOl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="205" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="526" y="117" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="322" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PF-SF-vDE" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="308" y="152" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="bb3-Xh-aBP"/>
+                                    <constraint firstAttribute="width" constant="60" id="lVF-JW-73y"/>
+                                    <constraint firstAttribute="height" constant="60" id="tsV-md-13X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="155" y="205" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="601" y="117" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="209" y="322" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pE9-ce-cIe" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="383" y="152" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.59469696969696972" green="0.11547513974698442" blue="0.11547513974698442" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4ws-Bw-Uw6"/>
+                                    <constraint firstAttribute="height" constant="60" id="Lrk-FW-SjS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="UmX-aM-6Yc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="%">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="283" y="152" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="676" y="117" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="284" y="322" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y7B-tK-KWw" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="157" y="228" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Bh2-sI-AMb"/>
+                                    <constraint firstAttribute="height" constant="60" id="dyW-vQ-dc0"/>
+                                    <constraint firstAttribute="width" constant="60" id="nO7-eJ-6F2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="45" y="271" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="450" y="193" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="398" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGC-WK-QOK" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="233" y="228" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="271" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="526" y="193" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="398" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsB-ay-hAE" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="308" y="228" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="H8H-sl-rMD"/>
+                                    <constraint firstAttribute="width" constant="60" id="y1H-lJ-akc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="155" y="271" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="601" y="193" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="209" y="398" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qO-TQ-g0k" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="383" y="228" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Vhz-Z6-Go3"/>
+                                    <constraint firstAttribute="width" constant="60" id="fCJ-cA-fuc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="·">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="283" y="228" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="676" y="193" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="284" y="398" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-y8-EGh" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="157" y="304" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Jkd-Ce-Tmb"/>
+                                    <constraint firstAttribute="height" constant="60" id="OOe-dR-9lS"/>
+                                    <constraint firstAttribute="width" constant="60" id="UyG-ZA-gF0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="45" y="337" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="450" y="269" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="474" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaL-S1-Y2v" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="233" y="304" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="3Uz-Fc-aYA"/>
+                                    <constraint firstAttribute="width" constant="60" id="m96-N0-QEp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="100" y="337" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="526" y="269" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="134" y="474" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCr-i6-FL3" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="308" y="304" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RL2-xZ-WRN"/>
+                                    <constraint firstAttribute="width" constant="60" id="Ruu-dE-N7Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="155" y="337" width="30" height="41"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="601" y="269" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="209" y="474" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikd-jR-VXl" customClass="ODShadowButton" customModule="BACulator" customModuleProvider="target">
+                                <rect key="frame" x="383" y="304" width="60" height="60"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.92941176469999998" green="0.35294117650000001" blue="0.28235294119999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="4BS-Rg-w1n"/>
+                                    <constraint firstAttribute="height" constant="60" id="nHU-cB-c5N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="283" y="304" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="676" y="269" width="60" height="60"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="284" y="474" width="60" height="60"/>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Set Gender" borderStyle="roundedRect" placeholder="Set Gender" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6oK-CH-g8L">
+                                <rect key="frame" x="157" y="63" width="286" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dsb-Ym-F6m"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="63" width="286" height="30"/>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="450" y="28" width="286" height="30"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="233" width="286" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01g-Zd-mFa">
+                                <rect key="frame" x="157" y="20" width="285" height="35"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Koi-TR-HQP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="57" y="20" width="285" height="35"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="190" width="286" height="35"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="qqq-EA-RKo" firstAttribute="leading" secondItem="YR1-HH-Avl" secondAttribute="leading" id="0li-Ni-DTB"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="trailing" secondItem="6oK-CH-g8L" secondAttribute="trailing" id="6MF-OW-DWt"/>
-                            <constraint firstItem="6oK-CH-g8L" firstAttribute="leading" secondItem="YR1-HH-Avl" secondAttribute="leading" id="9fd-6C-ByN"/>
-                            <constraint firstItem="6oK-CH-g8L" firstAttribute="top" secondItem="01g-Zd-mFa" secondAttribute="bottom" constant="8" symbolic="YES" id="DAc-Nj-9wl"/>
-                            <constraint firstItem="6oK-CH-g8L" firstAttribute="top" secondItem="01g-Zd-mFa" secondAttribute="bottom" constant="8" symbolic="YES" id="DlP-3O-xXi"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="centerX" secondItem="ICg-mk-2Bw" secondAttribute="centerX" id="DmB-gP-0Xi"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="trailing" secondItem="qqq-EA-RKo" secondAttribute="trailing" id="Fs4-ad-MDP"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="top" secondItem="6oK-CH-g8L" secondAttribute="bottom" constant="8" symbolic="YES" id="HQ2-kF-W1g"/>
-                            <constraint firstItem="qqq-EA-RKo" firstAttribute="leading" secondItem="YR1-HH-Avl" secondAttribute="leading" id="MM3-ZX-CpG"/>
-                            <constraint firstItem="qqq-EA-RKo" firstAttribute="top" secondItem="YR1-HH-Avl" secondAttribute="bottom" constant="8" symbolic="YES" id="P0t-wU-GOD"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="leading" secondItem="6oK-CH-g8L" secondAttribute="leading" id="U39-aO-bKy"/>
-                            <constraint firstItem="6oK-CH-g8L" firstAttribute="trailing" secondItem="YR1-HH-Avl" secondAttribute="trailing" id="ZLt-rr-JJi"/>
-                            <constraint firstItem="6oK-CH-g8L" firstAttribute="centerX" secondItem="01g-Zd-mFa" secondAttribute="centerX" id="aEz-ZZ-aFx"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="trailing" secondItem="qqq-EA-RKo" secondAttribute="trailing" id="eUZ-eB-0yx"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="centerX" secondItem="ICg-mk-2Bw" secondAttribute="centerX" id="fKY-8r-ctb"/>
-                            <constraint firstItem="01g-Zd-mFa" firstAttribute="top" secondItem="zqV-53-r7C" secondAttribute="bottom" id="gu0-EI-xep"/>
-                            <constraint firstItem="01g-Zd-mFa" firstAttribute="centerX" secondItem="6oK-CH-g8L" secondAttribute="centerX" id="kar-i6-d02"/>
-                            <constraint firstItem="qqq-EA-RKo" firstAttribute="top" secondItem="YR1-HH-Avl" secondAttribute="bottom" constant="8" symbolic="YES" id="vF4-Pu-SFA"/>
-                            <constraint firstItem="01g-Zd-mFa" firstAttribute="top" secondItem="zqV-53-r7C" secondAttribute="bottom" id="wBC-gt-xgT"/>
-                            <constraint firstItem="YR1-HH-Avl" firstAttribute="top" secondItem="6oK-CH-g8L" secondAttribute="bottom" constant="8" symbolic="YES" id="xcT-tZ-9QK"/>
+                            <constraint firstItem="YCr-i6-FL3" firstAttribute="baseline" secondItem="Ikd-jR-VXl" secondAttribute="firstBaseline" id="0jy-BR-8d7"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="baseline" secondItem="xGC-WK-QOK" secondAttribute="firstBaseline" id="2JY-2o-cZ1"/>
+                            <constraint firstItem="KqE-co-bEn" firstAttribute="top" secondItem="qqq-EA-RKo" secondAttribute="bottom" constant="112" id="2cl-Ec-8jT"/>
+                            <constraint firstItem="3lE-6z-JQw" firstAttribute="leading" secondItem="y7B-tK-KWw" secondAttribute="leading" id="3yc-HV-Zu4"/>
+                            <constraint firstItem="KbO-Ih-nqz" firstAttribute="baseline" secondItem="3lE-6z-JQw" secondAttribute="firstBaseline" id="4f0-kf-I1h"/>
+                            <constraint firstItem="5qO-TQ-g0k" firstAttribute="trailing" secondItem="pE9-ce-cIe" secondAttribute="trailing" id="5GU-hN-AA6"/>
+                            <constraint firstItem="6oK-CH-g8L" firstAttribute="top" secondItem="01g-Zd-mFa" secondAttribute="bottom" constant="8" symbolic="YES" id="6v9-BE-gaI"/>
+                            <constraint firstItem="y7B-tK-KWw" firstAttribute="top" secondItem="3lE-6z-JQw" secondAttribute="bottom" constant="16" id="A9O-PM-QrE"/>
+                            <constraint firstItem="YCr-i6-FL3" firstAttribute="top" secondItem="Ikd-jR-VXl" secondAttribute="top" id="ALL-do-dEA"/>
+                            <constraint firstItem="01g-Zd-mFa" firstAttribute="leading" secondItem="6oK-CH-g8L" secondAttribute="leading" id="AbJ-fm-zp2"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="baseline" secondItem="xGC-WK-QOK" secondAttribute="baseline" id="B8q-rO-kRE"/>
+                            <constraint firstItem="5qO-TQ-g0k" firstAttribute="leading" secondItem="Ikd-jR-VXl" secondAttribute="leading" id="BEs-oc-koD"/>
+                            <constraint firstItem="y7B-tK-KWw" firstAttribute="leading" secondItem="mJf-y8-EGh" secondAttribute="leading" id="BZh-pC-UpI"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="leading" secondItem="YaL-S1-Y2v" secondAttribute="leading" id="DFK-4f-65s"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="trailing" secondItem="3PF-SF-vDE" secondAttribute="trailing" id="FEU-a8-tAP"/>
+                            <constraint firstItem="6oK-CH-g8L" firstAttribute="centerX" secondItem="01g-Zd-mFa" secondAttribute="centerX" id="FX3-3W-QOx"/>
+                            <constraint firstItem="y7B-tK-KWw" firstAttribute="top" secondItem="xGC-WK-QOK" secondAttribute="top" id="GRH-R4-68M"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="leading" secondItem="3PF-SF-vDE" secondAttribute="leading" id="HK5-PV-XQ6"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="baseline" secondItem="y7B-tK-KWw" secondAttribute="firstBaseline" id="Ie2-WS-vh3"/>
+                            <constraint firstItem="Ikd-jR-VXl" firstAttribute="trailing" secondItem="5qO-TQ-g0k" secondAttribute="trailing" id="Lbe-EH-ang"/>
+                            <constraint firstItem="YaL-S1-Y2v" firstAttribute="baseline" secondItem="YCr-i6-FL3" secondAttribute="firstBaseline" id="NTN-7v-gIo"/>
+                            <constraint firstItem="01g-Zd-mFa" firstAttribute="top" secondItem="zqV-53-r7C" secondAttribute="bottom" id="Ocx-Vh-RfN"/>
+                            <constraint firstItem="YR1-HH-Avl" firstAttribute="top" secondItem="6oK-CH-g8L" secondAttribute="bottom" constant="15" id="QCS-o7-9Qm"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="leading" secondItem="YCr-i6-FL3" secondAttribute="leading" id="QTR-hK-RNd"/>
+                            <constraint firstItem="3lE-6z-JQw" firstAttribute="top" secondItem="KbO-Ih-nqz" secondAttribute="top" id="Rms-SS-Y9k"/>
+                            <constraint firstItem="y7B-tK-KWw" firstAttribute="trailing" secondItem="3lE-6z-JQw" secondAttribute="trailing" id="TFX-SJ-Mxi"/>
+                            <constraint firstItem="KbO-Ih-nqz" firstAttribute="leading" secondItem="xGC-WK-QOK" secondAttribute="leading" id="Ua6-8X-7dy"/>
+                            <constraint firstItem="Ikd-jR-VXl" firstAttribute="baseline" secondItem="YCr-i6-FL3" secondAttribute="baseline" id="Ub1-xH-fXl"/>
+                            <constraint firstItem="pE9-ce-cIe" firstAttribute="trailing" secondItem="YR1-HH-Avl" secondAttribute="trailing" id="UqX-q5-W2R"/>
+                            <constraint firstItem="y7B-tK-KWw" firstAttribute="trailing" secondItem="mJf-y8-EGh" secondAttribute="trailing" id="V4v-vP-61c"/>
+                            <constraint firstItem="YR1-HH-Avl" firstAttribute="leading" secondItem="3lE-6z-JQw" secondAttribute="leading" id="VWe-1W-18e"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="baseline" secondItem="pE9-ce-cIe" secondAttribute="firstBaseline" id="WPh-qp-nEc"/>
+                            <constraint firstItem="KbO-Ih-nqz" firstAttribute="leading" secondItem="3lE-6z-JQw" secondAttribute="trailing" constant="16" id="XEU-8W-Nf3"/>
+                            <constraint firstItem="qqq-EA-RKo" firstAttribute="centerX" secondItem="01g-Zd-mFa" secondAttribute="centerX" id="Y4O-HI-Uxo"/>
+                            <constraint firstItem="pE9-ce-cIe" firstAttribute="leading" secondItem="5qO-TQ-g0k" secondAttribute="leading" id="YVp-qu-2Rw"/>
+                            <constraint firstItem="pE9-ce-cIe" firstAttribute="leading" secondItem="3PF-SF-vDE" secondAttribute="trailing" constant="15" id="bJ9-1B-y24"/>
+                            <constraint firstItem="YR1-HH-Avl" firstAttribute="centerX" secondItem="ICg-mk-2Bw" secondAttribute="centerX" id="cEW-gK-h6l"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="top" secondItem="OsB-ay-hAE" secondAttribute="top" id="cgx-dD-zjs"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="top" secondItem="pE9-ce-cIe" secondAttribute="top" id="exE-XD-xzF"/>
+                            <constraint firstItem="5qO-TQ-g0k" firstAttribute="top" secondItem="OsB-ay-hAE" secondAttribute="top" id="f7D-hE-Fr9"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="trailing" secondItem="KbO-Ih-nqz" secondAttribute="trailing" id="fR5-Mi-XoX"/>
+                            <constraint firstItem="3lE-6z-JQw" firstAttribute="top" secondItem="YR1-HH-Avl" secondAttribute="bottom" constant="14" id="fTh-1U-oMc"/>
+                            <constraint firstItem="qqq-EA-RKo" firstAttribute="trailing" secondItem="01g-Zd-mFa" secondAttribute="trailing" id="fhe-67-tnC"/>
+                            <constraint firstItem="YaL-S1-Y2v" firstAttribute="baseline" secondItem="mJf-y8-EGh" secondAttribute="firstBaseline" id="gBw-v7-nmp"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="baseline" secondItem="KbO-Ih-nqz" secondAttribute="baseline" id="gIR-dB-II8"/>
+                            <constraint firstItem="5qO-TQ-g0k" firstAttribute="baseline" secondItem="OsB-ay-hAE" secondAttribute="baseline" id="gs1-JZ-8tw"/>
+                            <constraint firstItem="mJf-y8-EGh" firstAttribute="baseline" secondItem="YaL-S1-Y2v" secondAttribute="baseline" id="hfr-Yq-ffp"/>
+                            <constraint firstItem="pE9-ce-cIe" firstAttribute="baseline" secondItem="3PF-SF-vDE" secondAttribute="baseline" id="ilP-9J-YkC"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="trailing" secondItem="YCr-i6-FL3" secondAttribute="trailing" id="jZk-su-The"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="trailing" secondItem="YaL-S1-Y2v" secondAttribute="trailing" id="kZH-iX-eoS"/>
+                            <constraint firstItem="6oK-CH-g8L" firstAttribute="trailing" secondItem="YR1-HH-Avl" secondAttribute="trailing" id="ksw-Q4-COB"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="baseline" secondItem="y7B-tK-KWw" secondAttribute="baseline" id="kvv-Qx-IS1"/>
+                            <constraint firstItem="YR1-HH-Avl" firstAttribute="leading" secondItem="6oK-CH-g8L" secondAttribute="leading" id="mkO-Z1-8Gn"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="leading" secondItem="KbO-Ih-nqz" secondAttribute="trailing" constant="15" id="o1d-ZD-X11"/>
+                            <constraint firstItem="YCr-i6-FL3" firstAttribute="baseline" secondItem="YaL-S1-Y2v" secondAttribute="firstBaseline" id="oOk-QT-HvL"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="top" secondItem="KbO-Ih-nqz" secondAttribute="top" id="p7U-rG-Tn4"/>
+                            <constraint firstItem="KbO-Ih-nqz" firstAttribute="baseline" secondItem="3PF-SF-vDE" secondAttribute="firstBaseline" id="qq0-7n-GfN"/>
+                            <constraint firstItem="YaL-S1-Y2v" firstAttribute="top" secondItem="YCr-i6-FL3" secondAttribute="top" id="rLU-Wq-1vx"/>
+                            <constraint firstItem="xGC-WK-QOK" firstAttribute="baseline" secondItem="OsB-ay-hAE" secondAttribute="firstBaseline" id="s7j-Mp-zxH"/>
+                            <constraint firstItem="YaL-S1-Y2v" firstAttribute="baseline" secondItem="YCr-i6-FL3" secondAttribute="baseline" id="sZx-nf-Bui"/>
+                            <constraint firstItem="OsB-ay-hAE" firstAttribute="baseline" secondItem="5qO-TQ-g0k" secondAttribute="firstBaseline" id="tZP-K6-a6k"/>
+                            <constraint firstItem="mJf-y8-EGh" firstAttribute="top" secondItem="y7B-tK-KWw" secondAttribute="bottom" constant="16" id="wjU-Ud-Mzj"/>
+                            <constraint firstItem="YaL-S1-Y2v" firstAttribute="top" secondItem="mJf-y8-EGh" secondAttribute="top" id="xnT-YL-F8m"/>
+                            <constraint firstItem="KbO-Ih-nqz" firstAttribute="baseline" secondItem="3lE-6z-JQw" secondAttribute="baseline" id="yMw-Ft-j1U"/>
+                            <constraint firstItem="3PF-SF-vDE" firstAttribute="baseline" secondItem="KbO-Ih-nqz" secondAttribute="firstBaseline" id="ylE-Dx-H02"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="gu0-EI-xep"/>
-                                <exclude reference="kar-i6-d02"/>
-                                <exclude reference="9fd-6C-ByN"/>
-                                <exclude reference="DlP-3O-xXi"/>
-                                <exclude reference="ZLt-rr-JJi"/>
-                                <exclude reference="DmB-gP-0Xi"/>
-                                <exclude reference="HQ2-kF-W1g"/>
-                                <exclude reference="eUZ-eB-0yx"/>
-                                <exclude reference="MM3-ZX-CpG"/>
-                                <exclude reference="vF4-Pu-SFA"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <include reference="gu0-EI-xep"/>
-                                <include reference="kar-i6-d02"/>
-                                <exclude reference="wBC-gt-xgT"/>
-                                <include reference="9fd-6C-ByN"/>
-                                <exclude reference="DAc-Nj-9wl"/>
-                                <include reference="DlP-3O-xXi"/>
-                                <include reference="ZLt-rr-JJi"/>
-                                <exclude reference="aEz-ZZ-aFx"/>
-                                <exclude reference="6MF-OW-DWt"/>
-                                <include reference="DmB-gP-0Xi"/>
-                                <exclude reference="Fs4-ad-MDP"/>
-                                <include reference="HQ2-kF-W1g"/>
-                                <exclude reference="U39-aO-bKy"/>
-                                <include reference="eUZ-eB-0yx"/>
-                                <exclude reference="fKY-8r-ctb"/>
-                                <exclude reference="xcT-tZ-9QK"/>
-                                <exclude reference="0li-Ni-DTB"/>
-                                <include reference="MM3-ZX-CpG"/>
-                                <exclude reference="P0t-wU-GOD"/>
-                                <include reference="vF4-Pu-SFA"/>
-                            </mask>
-                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="740-gear" selectedImage="740-gear-selected" id="03Y-sz-WAh"/>
                     <connections>
@@ -159,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRs-Wg-Ti3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="123" y="-659"/>
+            <point key="canvasLocation" x="123" y="-660"/>
         </scene>
         <!--Custom Drink-->
         <scene sceneID="Bbt-Vr-6Uc">
@@ -189,7 +485,7 @@
                                     <constraint firstAttribute="height" constant="28" id="laa-Qt-gGH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.9149598817567568" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -671,7 +967,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="addBeer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1tK-4t-dYg"/>
+                                    <action selector="addDrinkPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="176-Rg-zba"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mtb-Un-v8b">
@@ -959,6 +1255,7 @@
                     <tabBarItem key="tabBarItem" title="BACulate" image="839-mobile-phone" selectedImage="839-mobile-phone-selected" id="sx5-bq-ufg"/>
                     <connections>
                         <outlet property="BACLabel" destination="dFq-Xx-IL8" id="ARQ-Iy-Ztv"/>
+                        <outlet property="addDrinkButton" destination="wLq-IC-wvZ" id="u0c-k5-ftc"/>
                         <outlet property="beerCountLabel" destination="Mtb-Un-v8b" id="wDf-EY-chk"/>
                         <outlet property="imageView" destination="yha-PW-PGg" id="DKh-Y3-vVb"/>
                         <outlet property="startStopButton" destination="7fD-Id-1xn" id="8pd-C3-SYg"/>
