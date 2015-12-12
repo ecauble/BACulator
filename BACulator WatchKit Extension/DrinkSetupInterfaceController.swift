@@ -16,20 +16,13 @@ class DrinkSetupInterfaceController: WKInterfaceController {
     
     var items: [(String, String)]! = nil
     var ABV : Double?
-    var usr = User()
+    
     let defaults = DefaultsManager()
     let abvArray: [Double] = [0.049, 0.05, 0.056, 0.042]
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-        if let val: User = context as? User {
-             self.usr = val
-        }
-        else{
-            //no val set
-         }
+      
     }
     
     override func willActivate() {
@@ -54,13 +47,11 @@ class DrinkSetupInterfaceController: WKInterfaceController {
         self.ABV = abvArray[value]
     }
     
+  
     
-    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        
-        // Return data to be accessed in next interfaceController
+    @IBAction func doneButtonPressed() {
         defaults.setABV(self.ABV!)
-        usr.beerABV = ABV
-        return usr
+        self.pushControllerWithName("SetBAC", context: nil)
     }
     
     

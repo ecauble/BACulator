@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A1310EC21BC64E1C00471C35 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC11BC64E1C00471C35 /* User.swift */; };
-		A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; };
 		A13C97141BEBE0A900B83CCA /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97131BEBE0A900B83CCA /* digital-7.ttf */; };
 		A13C97161BEBE0B700B83CCA /* SUBWT___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */; };
@@ -21,7 +19,7 @@
 		A19512021BE2F3DD00639E23 /* BACTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19512011BE2F3DD00639E23 /* BACTimer.swift */; };
 		A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */; };
 		A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */; };
-		A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */; };
+		A1AAB02E1BC5F45F004954F1 /* CulateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB02D1BC5F45F004954F1 /* CulateViewController.swift */; };
 		A1AAB0311BC5F45F004954F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB02F1BC5F45F004954F1 /* Main.storyboard */; };
 		A1AAB0361BC5F45F004954F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */; };
 		A1AAB0411BC5F45F004954F1 /* BACulatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AAB0401BC5F45F004954F1 /* BACulatorTests.swift */; };
@@ -108,8 +106,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A1310EC11BC64E1C00471C35 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchInterfaceController.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
 		A13C97131BEBE0A900B83CCA /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUBWT___.ttf"; sourceTree = "<group>"; };
@@ -123,7 +119,7 @@
 		A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODRoundButton.swift; sourceTree = "<group>"; };
 		A1AAB0281BC5F45F004954F1 /* BACulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BACulator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AAB02B1BC5F45F004954F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACulateViewController.swift; sourceTree = "<group>"; };
+		A1AAB02D1BC5F45F004954F1 /* CulateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulateViewController.swift; sourceTree = "<group>"; };
 		A1AAB0301BC5F45F004954F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1AAB0351BC5F45F004954F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1AAB0371BC5F45F004954F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -248,7 +244,7 @@
 				A1D80D981BEDA02A009E119E /* UICalculator.swift */,
 				A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */,
 				A1BDD4551BEAD2B400C851E8 /* CustomDrinkCell.swift */,
-				A1AAB02D1BC5F45F004954F1 /* BACulateViewController.swift */,
+				A1AAB02D1BC5F45F004954F1 /* CulateViewController.swift */,
 				A1AAB02F1BC5F45F004954F1 /* Main.storyboard */,
 				A1BDD4571BEAD41300C851E8 /* CustomDrinkCell.xib */,
 				A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */,
@@ -293,11 +289,10 @@
 				A1ABD8191BD06C1400BE8903 /* Extensions */,
 				A1ABD81A1BD06C3E00BE8903 /* Models */,
 				A1AAB0681BC5F45F004954F1 /* ExtensionDelegate.swift */,
-				A1310EC51BC6539800471C35 /* SwitchInterfaceController.swift */,
 				A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */,
 				A1AAB09D1BC6179A004954F1 /* BodySetupInterfaceController.swift */,
-				A1310EC91BC6695200471C35 /* BACInterfaceController.swift */,
 				A1F6E1781BCDDEDF00660601 /* DrinkSetupInterfaceController.swift */,
+				A1310EC91BC6695200471C35 /* BACInterfaceController.swift */,
 				A1AAB06A1BC5F45F004954F1 /* NotificationController.swift */,
 				A1AAB06C1BC5F45F004954F1 /* ComplicationController.swift */,
 				A1AAB0861BC602EB004954F1 /* BACulator WatchKit App-Bridging-Header.h */,
@@ -328,7 +323,6 @@
 			isa = PBXGroup;
 			children = (
 				A1F6E1761BCDDEBF00660601 /* Calculator.swift */,
-				A1310EC11BC64E1C00471C35 /* User.swift */,
 				A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */,
 			);
 			name = Models;
@@ -463,6 +457,12 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					A1AAB03B1BC5F45F004954F1 = {
@@ -569,7 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1C0F4FC1BCF5D79008E4CDB /* User.swift in Sources */,
-				A1AAB02E1BC5F45F004954F1 /* BACulateViewController.swift in Sources */,
+				A1AAB02E1BC5F45F004954F1 /* CulateViewController.swift in Sources */,
 				A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */,
 				A1BDD4561BEAD2B400C851E8 /* CustomDrinkCell.swift in Sources */,
 				A1BB12071BC704330062E3FE /* ODUIImageView.swift in Sources */,
@@ -609,14 +609,12 @@
 			files = (
 				A1F6E1791BCDDEDF00660601 /* DrinkSetupInterfaceController.swift in Sources */,
 				A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */,
-				A1310EC61BC6539800471C35 /* SwitchInterfaceController.swift in Sources */,
 				A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */,
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
 				A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,
 				A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */,
 				A1AAB06D1BC5F45F004954F1 /* ComplicationController.swift in Sources */,
-				A1310EC21BC64E1C00471C35 /* User.swift in Sources */,
 				A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */,
 				A1AAB0691BC5F45F004954F1 /* ExtensionDelegate.swift in Sources */,
 			);

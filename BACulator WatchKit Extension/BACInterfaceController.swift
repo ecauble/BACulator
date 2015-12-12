@@ -8,9 +8,10 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 
-class BACInterfaceController: WKInterfaceController {
+class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
 
     
     @IBOutlet var stopWatch: WKInterfaceTimer!
@@ -18,8 +19,6 @@ class BACInterfaceController: WKInterfaceController {
     @IBOutlet var countLabel: WKInterfaceLabel!
     @IBOutlet var startStopButton: WKInterfaceButton!
     
-    
-    var usr = User()
     var drinkCount : Int = 0
     var timeZone = NSTimeZone(name: "UTC")
     let defaults = DefaultsManager()
@@ -28,14 +27,23 @@ class BACInterfaceController: WKInterfaceController {
     var startDate : NSDate?
     var timer : NSTimer = NSTimer()
     let green = UIColor(rgba: "#6DFD6E")
-    
+    var gender = 0
+    var weight = 0.0
+    var abv = 0.0
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+        gender = defaults.getGender()
+        weight = defaults.getWeight()
+        abv = defaults.getABV()
         // Configure interface objects here.
+        if WCSession.isSupported() {
+            let session = WCSession.defaultSession()
+            session.delegate = self
+            session.activateSession()
+        }
         
-        addMenuItemWithItemIcon(WKMenuItemIcon.Trash, title: "Reset",
-            action: "resetDefaults")    }
+        addMenuItemWithItemIcon(WKMenuItemIcon.Trash, title: "Reset", action: "resetDefaults")
+    }
     
     func resetDefaults(){
         defaults.resetDefaults()
@@ -68,9 +76,7 @@ class BACInterfaceController: WKInterfaceController {
         //needed for BAC calculation
         let timePassed = NSDate().timeIntervalSinceDate(startDate!) / 60 / 60
         
-        //concatenate minuets, seconds and milliseconds as assign it to the UILabel
-       // timerLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
-        let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:drinkCount)
+        let BAC : Double = calc.calculateABV(gender, weight: weight, ABV: abv, timePassed: timePassed, drinkCount:drinkCount)
 
         BACLabel.setText("≅ " + (String(format: "%.5f", BAC)) + "%") 
         if(calc.isNearLimit(BAC) == true){
@@ -83,17 +89,7 @@ class BACInterfaceController: WKInterfaceController {
         }
     }
     
-    
-    
-    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
-        
-        // Return data to be accessed in next interfaceController
-        usr.drinkCount = self.drinkCount
-        return usr
-    }
-    
-    
-    
+   
     @IBAction func stopStartPressed() {
         if (!timer.valid) {
             stopWatch.start()
@@ -130,6 +126,8 @@ class BACInterfaceController: WKInterfaceController {
         drinkCount++
         countLabel.setText("\(drinkCount)")
         defaults.setDrinkCount(drinkCount)
+//        let message = ["wk_DrinkCount": String(drinkCount)]
+//        WCSession.defaultSession().transferUserInfo(message)
     }
     
   

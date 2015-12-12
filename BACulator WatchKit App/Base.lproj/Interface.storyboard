@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Au0-Pj-Pgr">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Au0-Pj-Pgr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9019"/>
     </dependencies>
     <scenes>
-        <!--SetBACIC-->
+        <!--SetBAC-->
         <scene sceneID="caS-DG-9zD">
             <objects>
-                <controller identifier="SetBACIC" hidesWhenLoading="NO" id="X5A-RT-DaH" customClass="BACInterfaceController" customModule="BACulator_WatchKit_Extension">
+                <controller identifier="SetBAC" hidesWhenLoading="NO" id="X5A-RT-DaH" customClass="BACInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
                         <separator alignment="left" id="sbr-Fo-nOS"/>
                         <group width="1" alignment="left" id="HIF-aB-rH6">
@@ -64,7 +64,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="690" y="263.75"/>
+            <point key="canvasLocation" x="448" y="517.5"/>
         </scene>
         <!--SetGenderIC-->
         <scene sceneID="OwF-Kk-Gp9">
@@ -82,7 +82,7 @@
                         </picker>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="jhT-aG-A63">
                             <connections>
-                                <segue destination="Hgo-xb-ab1" kind="modal" identifier="showWeight" id="6aw-wS-QBg"/>
+                                <segue destination="Hgo-xb-ab1" kind="push" identifier="showWeight" id="6aw-wS-QBg"/>
                             </connections>
                         </button>
                     </items>
@@ -108,7 +108,7 @@
                         </picker>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="ufP-p1-fue">
                             <connections>
-                                <segue destination="H08-97-gYE" kind="modal" identifier="showBeer" id="uEj-uB-eql"/>
+                                <segue destination="H08-97-gYE" kind="push" identifier="showBeer" id="uEj-uB-eql"/>
                             </connections>
                         </button>
                     </items>
@@ -124,7 +124,7 @@
             <objects>
                 <controller identifier="SetDrinkIC" hidesWhenLoading="NO" id="H08-97-gYE" customClass="DrinkSetupInterfaceController" customModule="BACulator_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Pick Beer" id="BSM-QV-tLU">
+                        <label alignment="left" text="Pick Drink" id="BSM-QV-tLU">
                             <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         </label>
                         <picker width="1" height="86" alignment="left" focusStyle="stack" id="bkg-np-AbA">
@@ -134,7 +134,7 @@
                         </picker>
                         <button width="1" alignment="center" verticalAlignment="bottom" title="Done" id="tbQ-WJ-mZ8">
                             <connections>
-                                <segue destination="X5A-RT-DaH" kind="modal" identifier="showBAC" id="Sgm-Fy-keO"/>
+                                <action selector="doneButtonPressed" destination="H08-97-gYE" id="a52-yF-QLv"/>
                             </connections>
                         </button>
                     </items>

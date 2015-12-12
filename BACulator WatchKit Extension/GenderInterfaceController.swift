@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import WatchConnectivity
 import Foundation
 
 
@@ -18,18 +19,22 @@ class GenderInterfaceController: WKInterfaceController {
     let defaults = DefaultsManager()
     var genderList: [String] = ["Male","Female","Undefined"]
     var gender : Int?
-    var usr = User()
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
         // Configure interface objects here.
-      
+        
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        
+        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
+            self.pushControllerWithName("SetDrinkIC", context: nil)
+
+        }
         
         let pickerItems: [WKPickerItem] = genderList.map {
             let pickerItem = WKPickerItem()
@@ -42,11 +47,9 @@ class GenderInterfaceController: WKInterfaceController {
             gender = defaults.getGender()
             genderPicker.setItems(pickerItems)
             genderPicker.setSelectedItemIndex(gender!)
-            //need to find solution to jump between interface controllers
-            //self.presentControllerWithName("SetBACIC", context: self.usr)
-        }else{
-        genderPicker.setItems(pickerItems)
-        genderPicker.setSelectedItemIndex(1)
+          }else{
+            genderPicker.setItems(pickerItems)
+            genderPicker.setSelectedItemIndex(1)
         }
     }
     
@@ -58,10 +61,9 @@ class GenderInterfaceController: WKInterfaceController {
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         // Return data to be accessed in next interfaceController
-        usr.gender = gender
-        defaults.setGender(gender!)
-        return usr
-    }
+         defaults.setGender(gender!)
+        return gender
+     }
     
     
     override func didDeactivate() {

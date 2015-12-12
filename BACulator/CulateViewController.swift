@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 
-class BACulateViewController: UIViewController {
+class CulateViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var BACLabel: UILabel!
@@ -18,11 +17,10 @@ class BACulateViewController: UIViewController {
     @IBOutlet weak var beerCountLabel: UILabel!
     @IBOutlet weak var startStopButton: ODRoundButton!
     @IBOutlet var addDrinkButton: ODRoundButton!
+    @IBOutlet var BACLabelTest: UILabel!
     
-    
-    private var data : NSObject?
-    
-    var beerCounter : Int = 0
+
+    var drinkCount : Int = 0
     let defaults = DefaultsManager()
     let calc = Calculator()
     let lableFormat = "0.0000000"
@@ -38,28 +36,28 @@ class BACulateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-      
+        defaults.sync()
+    
         imageView.clipsToBounds = false
         imageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
         imageView.layer.shadowRadius = 5.0
         imageView.layer.shadowOffset = CGSize.init(width: 3, height: 3)
-        beerCountLabel.text = String(beerCounter)
-        defaults.sync()
+        beerCountLabel.text = String(drinkCount)
         BACLabel.shadowColor = UIColor.blackColor()
         BACLabel.layer.shadowOpacity = 0.5
         BACLabel.shadowOffset = CGSize.init(width: 3, height: 3)
         beerCountLabel.shadowColor = UIColor.lightGrayColor()
         beerCountLabel.shadowOffset = CGSize.init(width: 3, height: 3)
+        
         if(defaults.isSet(K_DRINK_COUNT)){
-        beerCountLabel.text = String(defaults.getDrinkCount())
-        }else{
-            beerCounter = 0
+            beerCountLabel.text = String(defaults.getDrinkCount())
+            }else{
+                drinkCount = 0
         }
         
         //load images array for animation
         for i in 1 ... 12{
             images.append(UIImage(named: "beer-glass-anim-\(i)")!)
-            
         }
         
         imageView.animationImages = images
@@ -70,13 +68,13 @@ class BACulateViewController: UIViewController {
 
 
     @IBAction func addDrinkPressed(sender: AnyObject) {
-        if(self.beerCounter < 1){
+        if(self.drinkCount < 1){
         startStopButtonPressed(self)
         startStopButton.hidden = false
         }
-        beerCounter++
-        beerCountLabel.text =  "\(beerCounter)"
-        defaults.setDrinkCount(beerCounter)
+        drinkCount++
+        beerCountLabel.text =  "\(drinkCount)"
+        defaults.setDrinkCount(drinkCount)
     }
 
   
@@ -114,7 +112,7 @@ class BACulateViewController: UIViewController {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         timerLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
-        let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:beerCounter)
+        let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:drinkCount)
     
         BACLabel.text = "≅ " + (String(format: "%.7f", BAC)) + "%"
         if(calc.isNearLimit(BAC) == true){
@@ -144,9 +142,9 @@ class BACulateViewController: UIViewController {
             timerLabel.text = "00:00:00"
             BACLabel.text = "≅ 0.0000000%"
             BACLabel.textColor = UIColor.whiteColor()
-            beerCounter = 0
-            beerCountLabel.text = String(beerCounter)
-            defaults.setDrinkCount(beerCounter)
+            drinkCount = 0
+            beerCountLabel.text = String(drinkCount)
+            defaults.setDrinkCount(drinkCount)
             startStopButton.backgroundColor = UIColor(rgba: "#6DFD6E")
             imageView.stopAnimating()
             startStopButton.hidden = true
@@ -154,11 +152,25 @@ class BACulateViewController: UIViewController {
     
     }
     
+// 
+//    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
+//        print((userInfo.values))
+//        if(self.drinkCount < 1){
+//            startStopButtonPressed(self)
+//            startStopButton.hidden = false
+//        }
+//        drinkCount++
+//        beerCountLabel.text =  "\(drinkCount)"
+//        defaults.setDrinkCount(drinkCount)
+//    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        print("memory warning thrown")
     }
+    
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
