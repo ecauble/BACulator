@@ -73,11 +73,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         
         let image = UIImage(named: imageArray[row])
         let imageView = UIImageView(image: image)
-//        for view in setGenderTextField.subviews{
-//            if (view is UIImageView) {
-//                view.removeFromSuperview()
-//            }
-//        }
+        
         setGenderTextField.addSubview(imageView)
         changeColorForGender(row)
     }

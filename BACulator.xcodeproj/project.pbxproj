@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A11A537B1C7679C100C90E30 /* BACModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11A537A1C7679C100C90E30 /* BACModel.swift */; };
+		A11A537C1C7679C100C90E30 /* BACModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11A537A1C7679C100C90E30 /* BACModel.swift */; };
 		A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1310EC91BC6695200471C35 /* BACInterfaceController.swift */; };
 		A13C97141BEBE0A900B83CCA /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97131BEBE0A900B83CCA /* digital-7.ttf */; };
 		A13C97161BEBE0B700B83CCA /* SUBWT___.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */; };
-		A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */; };
-		A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A165CB541BCAABA4006C869F /* DefaultsManager.swift */; };
 		A179E69C1BCE097800EE0C1D /* CustomDrinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */; };
 		A17FBB641BC8B523008FEA91 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A17FBB631BC8B523008FEA91 /* Media.xcassets */; };
+		A18633BD1C7674620081EA7F /* BACulator.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A18633BC1C7674620081EA7F /* BACulator.entitlements */; };
+		A18633BF1C76748F0081EA7F /* BACulator.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A18633BE1C76748F0081EA7F /* BACulator.entitlements */; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; };
 		A19512001BE2F06D00639E23 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19511FF1BE2F06D00639E23 /* SwiftyTimer.swift */; };
 		A19512021BE2F3DD00639E23 /* BACTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19512011BE2F3DD00639E23 /* BACTimer.swift */; };
@@ -106,13 +108,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A11A537A1C7679C100C90E30 /* BACModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACModel.swift; sourceTree = "<group>"; };
 		A1310EC91BC6695200471C35 /* BACInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACInterfaceController.swift; sourceTree = "<group>"; };
 		A13C97131BEBE0A900B83CCA /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 		A13C97151BEBE0B700B83CCA /* SUBWT___.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SUBWT___.ttf"; sourceTree = "<group>"; };
-		A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
-		A165CB541BCAABA4006C869F /* DefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultsManager.swift; sourceTree = "<group>"; };
 		A179E69B1BCE097800EE0C1D /* CustomDrinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDrinkViewController.swift; sourceTree = "<group>"; };
 		A17FBB631BC8B523008FEA91 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		A18633BC1C7674620081EA7F /* BACulator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BACulator.entitlements; sourceTree = "<group>"; };
+		A18633BE1C76748F0081EA7F /* BACulator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BACulator.entitlements; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
 		A19511FF1BE2F06D00639E23 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		A19512011BE2F3DD00639E23 /* BACTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACTimer.swift; sourceTree = "<group>"; };
@@ -201,7 +204,6 @@
 		A14EE66E1BD7F57100CA49D9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A165CB541BCAABA4006C869F /* DefaultsManager.swift */,
 				A1BB120B1BC718BA0062E3FE /* Calculator.swift */,
 				A1C0F4FB1BCF5D79008E4CDB /* User.swift */,
 				A19512011BE2F3DD00639E23 /* BACTimer.swift */,
@@ -236,6 +238,7 @@
 		A1AAB02A1BC5F45F004954F1 /* BACulator */ = {
 			isa = PBXGroup;
 			children = (
+				A11A537A1C7679C100C90E30 /* BACModel.swift */,
 				A1BB12081BC704510062E3FE /* Styles */,
 				A1F12E631BCE228900C79018 /* Extensions */,
 				A14EE66E1BD7F57100CA49D9 /* Models */,
@@ -249,6 +252,7 @@
 				A1BDD4571BEAD41300C851E8 /* CustomDrinkCell.xib */,
 				A1AAB0341BC5F45F004954F1 /* LaunchScreen.storyboard */,
 				A1AAB0371BC5F45F004954F1 /* Info.plist */,
+				A18633BC1C7674620081EA7F /* BACulator.entitlements */,
 				A1BB12041BC701D70062E3FE /* Assets.xcassets */,
 				A13C97171BEBEE3500B83CCA /* Fonts */,
 			);
@@ -296,6 +300,7 @@
 				A1AAB06A1BC5F45F004954F1 /* NotificationController.swift */,
 				A1AAB06C1BC5F45F004954F1 /* ComplicationController.swift */,
 				A1AAB0861BC602EB004954F1 /* BACulator WatchKit App-Bridging-Header.h */,
+				A18633BE1C76748F0081EA7F /* BACulator.entitlements */,
 				A1AAB06E1BC5F45F004954F1 /* Assets.xcassets */,
 				A1AAB0701BC5F45F004954F1 /* Info.plist */,
 				A1AAB0641BC5F45F004954F1 /* Supporting Files */,
@@ -323,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				A1F6E1761BCDDEBF00660601 /* Calculator.swift */,
-				A140A9701BCA13A1002CCF29 /* DefaultsManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -526,6 +530,7 @@
 				A1BDD4581BEAD41300C851E8 /* CustomDrinkCell.xib in Resources */,
 				A1AAB0311BC5F45F004954F1 /* Main.storyboard in Resources */,
 				A13C97141BEBE0A900B83CCA /* digital-7.ttf in Resources */,
+				A18633BD1C7674620081EA7F /* BACulator.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1AAB09F1BC617F5004954F1 /* Interface.storyboard in Resources */,
+				A18633BF1C76748F0081EA7F /* BACulator.entitlements in Resources */,
 				A1AAB06F1BC5F45F004954F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A11A537B1C7679C100C90E30 /* BACModel.swift in Sources */,
 				A1C0F4FC1BCF5D79008E4CDB /* User.swift in Sources */,
 				A1AAB02E1BC5F45F004954F1 /* CulateViewController.swift in Sources */,
 				A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */,
@@ -579,7 +586,6 @@
 				A19512021BE2F3DD00639E23 /* BACTimer.swift in Sources */,
 				A1F6E17B1BCDFBCF00660601 /* UIColorExtension.swift in Sources */,
 				A19512001BE2F06D00639E23 /* SwiftyTimer.swift in Sources */,
-				A165CB551BCAABA4006C869F /* DefaultsManager.swift in Sources */,
 				A1BB120A1BC713A20062E3FE /* SettingsViewController.swift in Sources */,
 				A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */,
 				A1BB120C1BC718BA0062E3FE /* Calculator.swift in Sources */,
@@ -611,9 +617,9 @@
 				A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */,
 				A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */,
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
+				A11A537C1C7679C100C90E30 /* BACModel.swift in Sources */,
 				A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,
-				A140A9711BCA13A1002CCF29 /* DefaultsManager.swift in Sources */,
 				A1AAB06D1BC5F45F004954F1 /* ComplicationController.swift in Sources */,
 				A1310ECA1BC6695200471C35 /* BACInterfaceController.swift in Sources */,
 				A1AAB0691BC5F45F004954F1 /* ExtensionDelegate.swift in Sources */,
