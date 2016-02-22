@@ -17,6 +17,8 @@
 		A18633BD1C7674620081EA7F /* BACulator.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A18633BC1C7674620081EA7F /* BACulator.entitlements */; };
 		A18633BF1C76748F0081EA7F /* BACulator.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = A18633BE1C76748F0081EA7F /* BACulator.entitlements */; };
 		A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */; };
+		A191C53A1C7A100C007653C2 /* DrinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191C5391C7A100C007653C2 /* DrinkObject.swift */; };
+		A191C53B1C7A11D0007653C2 /* DrinkObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A191C5391C7A100C007653C2 /* DrinkObject.swift */; };
 		A19512001BE2F06D00639E23 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19511FF1BE2F06D00639E23 /* SwiftyTimer.swift */; };
 		A19512021BE2F3DD00639E23 /* BACTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19512011BE2F3DD00639E23 /* BACTimer.swift */; };
 		A1A11E031BCF2D2C00BB73E2 /* ODRoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */; };
@@ -117,6 +119,7 @@
 		A18633BC1C7674620081EA7F /* BACulator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BACulator.entitlements; sourceTree = "<group>"; };
 		A18633BE1C76748F0081EA7F /* BACulator.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = BACulator.entitlements; sourceTree = "<group>"; };
 		A188ECDC1BC63E8A0098BF71 /* GenderInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderInterfaceController.swift; sourceTree = "<group>"; };
+		A191C5391C7A100C007653C2 /* DrinkObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkObject.swift; sourceTree = "<group>"; };
 		A19511FF1BE2F06D00639E23 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
 		A19512011BE2F3DD00639E23 /* BACTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BACTimer.swift; sourceTree = "<group>"; };
 		A1A11E021BCF2D2C00BB73E2 /* ODRoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ODRoundButton.swift; sourceTree = "<group>"; };
@@ -238,6 +241,7 @@
 		A1AAB02A1BC5F45F004954F1 /* BACulator */ = {
 			isa = PBXGroup;
 			children = (
+				A191C5391C7A100C007653C2 /* DrinkObject.swift */,
 				A11A537A1C7679C100C90E30 /* BACModel.swift */,
 				A1BB12081BC704510062E3FE /* Styles */,
 				A1F12E631BCE228900C79018 /* Extensions */,
@@ -587,6 +591,7 @@
 				A1F6E17B1BCDFBCF00660601 /* UIColorExtension.swift in Sources */,
 				A19512001BE2F06D00639E23 /* SwiftyTimer.swift in Sources */,
 				A1BB120A1BC713A20062E3FE /* SettingsViewController.swift in Sources */,
+				A191C53A1C7A100C007653C2 /* DrinkObject.swift in Sources */,
 				A1AAB02C1BC5F45F004954F1 /* AppDelegate.swift in Sources */,
 				A1BB120C1BC718BA0062E3FE /* Calculator.swift in Sources */,
 				A179E69C1BCE097800EE0C1D /* CustomDrinkViewController.swift in Sources */,
@@ -617,6 +622,7 @@
 				A1AAB06B1BC5F45F004954F1 /* NotificationController.swift in Sources */,
 				A1F6E1771BCDDEBF00660601 /* Calculator.swift in Sources */,
 				A1AAB09E1BC6179A004954F1 /* BodySetupInterfaceController.swift in Sources */,
+				A191C53B1C7A11D0007653C2 /* DrinkObject.swift in Sources */,
 				A11A537C1C7679C100C90E30 /* BACModel.swift in Sources */,
 				A1C0F4FE1BCF747D008E4CDB /* UIColorExtension.swift in Sources */,
 				A188ECDD1BC63E8A0098BF71 /* GenderInterfaceController.swift in Sources */,

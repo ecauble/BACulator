@@ -10,16 +10,19 @@ import Foundation
 
 struct BACModel {
     
-    private(set) var items: [String] = []
-    var gender : Int
-    var weight : Double
-    var drinkArray : Array(String:)
+    private(set) var items: [DrinkObject] = []
+    private(set) var gender : Int?
+    private(set) var weight : Double?
     
     init() {
         items = load()
+        gender = defaults?.integerForKey(genderKey)
+        weight = defaults?.doubleForKey(weightKey)
     }
     
-    mutating func append(item: String) {
+    
+    
+    mutating func append(item: DrinkObject) {
         items.append(item)
         save(items)
     }
@@ -29,14 +32,27 @@ struct BACModel {
         save(items)
     }
     
-    func save(items: [String]) {
+    func save(items: [DrinkObject]) {
         defaults?.setObject(items, forKey: itemsKey)
         print(defaults?.synchronize())
     }
-    func load() -> [String] {
-        return defaults?.objectForKey(itemsKey) as? [String] ?? []
+    
+    func saveGender(gender: Int){
+        defaults?.setObject(gender, forKey: genderKey)
+        print(defaults?.synchronize())
+    }
+    
+    func saveWeight(){
+        defaults?.setObject(weight, forKey: weightKey)
+        print(defaults?.synchronize())
+    }
+    
+    func load() -> [DrinkObject] {
+        return defaults?.objectForKey(itemsKey) as? [DrinkObject] ?? []
     }
     
     private let itemsKey = "items"
+    private let genderKey = "gender"
+    private let weightKey = "weight"
     private let defaults = NSUserDefaults(suiteName: "group.com.oopiedoopie.BACulator")
 }

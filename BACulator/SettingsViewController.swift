@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var doneButton: ODShadowButton!
     
   
-    let defaults = DefaultsManager()
+    let bacModel = BACModel()
     let picker = UIPickerView()
     let pickerData = ["Male","Female","Undefined"]
     let imageArray = ["769-male", "768-female", "779-users"]
