@@ -21,7 +21,7 @@ class CulateViewController: UIViewController {
     
 
     var drinkCount : Int = 0
-    let defaults = DefaultsManager()
+    let bacModel = BACModel.sharedInstance
     let calc = Calculator()
     let lableFormat = "0.0000000"
     var startTime = NSTimeInterval()
@@ -36,7 +36,6 @@ class CulateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        defaults.sync()
     
         imageView.clipsToBounds = false
         imageView.layer.shadowColor = UIColor.lightGrayColor().CGColor
@@ -49,8 +48,8 @@ class CulateViewController: UIViewController {
         beerCountLabel.shadowColor = UIColor.lightGrayColor()
         beerCountLabel.shadowOffset = CGSize.init(width: 3, height: 3)
         
-        if(defaults.isSet(K_DRINK_COUNT)){
-            beerCountLabel.text = String(defaults.getDrinkCount())
+        if(bacModel.userInfoAvailable()){
+            //beerCountLabel.text = String(defaults.getDrinkCount())
             }else{
                 drinkCount = 0
         }
@@ -74,8 +73,7 @@ class CulateViewController: UIViewController {
         }
         drinkCount++
         beerCountLabel.text =  "\(drinkCount)"
-        defaults.setDrinkCount(drinkCount)
-    }
+     }
 
   
     
@@ -112,7 +110,7 @@ class CulateViewController: UIViewController {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         timerLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
-        let BAC : Double = calc.calculateABV(defaults.getGender(), weight: defaults.getWeight(), ABV: defaults.getABV(), timePassed: timePassed, drinkCount:drinkCount)
+        let BAC : Double = calc.calculateABV(bacModel.gender!, weight: bacModel.weight!, ABV: bacModel.items[0].drinkABV, timePassed: timePassed, drinkCount: bacModel.items.count)
     
         BACLabel.text = "≅ " + (String(format: "%.7f", BAC)) + "%"
         if(calc.isNearLimit(BAC) == true){
@@ -144,7 +142,7 @@ class CulateViewController: UIViewController {
             BACLabel.textColor = UIColor.whiteColor()
             drinkCount = 0
             beerCountLabel.text = String(drinkCount)
-            defaults.setDrinkCount(drinkCount)
+            //defaults.setDrinkCount(drinkCount)
             startStopButton.backgroundColor = UIColor(rgba: "#6DFD6E")
             imageView.stopAnimating()
             startStopButton.hidden = true
@@ -152,17 +150,7 @@ class CulateViewController: UIViewController {
     
     }
     
-// 
-//    func session(session: WCSession, didReceiveUserInfo userInfo: [String : AnyObject]) {
-//        print((userInfo.values))
-//        if(self.drinkCount < 1){
-//            startStopButtonPressed(self)
-//            startStopButton.hidden = false
-//        }
-//        drinkCount++
-//        beerCountLabel.text =  "\(drinkCount)"
-//        defaults.setDrinkCount(drinkCount)
-//    }
+ 
     
     
     override func didReceiveMemoryWarning() {

@@ -16,7 +16,7 @@ class BodySetupInterfaceController: WKInterfaceController {
   
     var weightList: [Double] = []
     var weight : Double?
-    let defaults = DefaultsManager()
+    let bacModel = BACModel.sharedInstance
     
     
     
@@ -38,8 +38,8 @@ class BodySetupInterfaceController: WKInterfaceController {
             pickerItem.title = String($0)
             return pickerItem
         }
-        if(defaults.isSet(K_WEIGHT)){
-            weight = defaults.getWeight()
+        if(bacModel.userInfoAvailable()){
+            weight = bacModel.weight
             weightPicker.setItems(pickerItems)
             weightPicker.setSelectedItemIndex(weightList.indexOf(weight!)!)
             
@@ -51,7 +51,7 @@ class BodySetupInterfaceController: WKInterfaceController {
     
     @IBAction func pickerSelectedItemChanged(value: Int) {
         self.weight = weightList[value]
-        defaults.setWeight(weight!)
+        bacModel.setWeight(weight!)
     }
 
   

@@ -17,7 +17,7 @@ class DrinkSetupInterfaceController: WKInterfaceController {
     var items: [(String, String)]! = nil
     var ABV : Double?
     
-    let defaults = DefaultsManager()
+    var bacModel = BACModel.sharedInstance
     let abvArray: [Double] = [0.049, 0.05, 0.056, 0.042]
     
     override func awakeWithContext(context: AnyObject?) {
@@ -50,8 +50,9 @@ class DrinkSetupInterfaceController: WKInterfaceController {
   
     
     @IBAction func doneButtonPressed() {
-        defaults.setABV(self.ABV!)
-        self.pushControllerWithName("SetBAC", context: nil)
+        let drink = DrinkObject.init(name: "asdf", volume: 12.0, abv: self.ABV!)
+        bacModel.append(drink)
+         self.pushControllerWithName("SetBAC", context: nil)
     }
     
     

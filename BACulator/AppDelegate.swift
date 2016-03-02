@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let defaults = DefaultsManager()
+    let bacModel = BACModel.sharedInstance
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -30,8 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if needed pop to root view controller
         rootNavigationController?.popToRootViewControllerAnimated(false)
         
+        print(bacModel.userInfoAvailable())
+        print(bacModel.gender)
+        print(bacModel.weight)
         // navigate to proper view controller after reading defaults
-        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
+        if(bacModel.userInfoAvailable()){
             tabbarController!.selectedViewController = tabbarController!.viewControllers?[1]
         }
         else{

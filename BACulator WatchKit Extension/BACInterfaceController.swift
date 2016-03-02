@@ -21,7 +21,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var drinkCount : Int = 0
     var timeZone = NSTimeZone(name: "UTC")
-    let defaults = DefaultsManager()
+    let bacModel = BACModel.sharedInstance
     let calc = Calculator()
     var startTime = NSTimeInterval()
     var startDate : NSDate?
@@ -32,9 +32,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     var abv = 0.0
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        gender = defaults.getGender()
-        weight = defaults.getWeight()
-        abv = defaults.getABV()
+        
         // Configure interface objects here.
         if WCSession.isSupported() {
             let session = WCSession.defaultSession()
@@ -46,7 +44,6 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     }
     
     func resetDefaults(){
-        defaults.resetDefaults()
         self.popController()
     }
     
@@ -109,9 +106,9 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
             startStopButton.setTitle("Start")
             BACLabel.setText("≅ 0.00000%")
             BACLabel.setTextColor(UIColor.whiteColor())
-            drinkCount = 0
+            
             countLabel.setText(String(drinkCount))
-            defaults.setDrinkCount(drinkCount)
+            bacModel.items[0].remove()
             startStopButton.setBackgroundColor(UIColor(rgba: "#6DFD6E"))
             
         }
@@ -125,7 +122,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
    
         drinkCount++
         countLabel.setText("\(drinkCount)")
-        defaults.setDrinkCount(drinkCount)
+        bacModel.items[0].add()
 //        let message = ["wk_DrinkCount": String(drinkCount)]
 //        WCSession.defaultSession().transferUserInfo(message)
     }

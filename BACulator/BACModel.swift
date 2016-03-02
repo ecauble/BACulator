@@ -8,11 +8,15 @@
 
 import Foundation
 
+
+
 struct BACModel {
     
     private(set) var items: [DrinkObject] = []
     private(set) var gender : Int?
     private(set) var weight : Double?
+    static let sharedInstance = BACModel()
+    
     
     init() {
         items = load()
@@ -31,24 +35,31 @@ struct BACModel {
         items.removeAtIndex(index)
         save(items)
     }
-    
+     
     func save(items: [DrinkObject]) {
         defaults?.setObject(items, forKey: itemsKey)
         print(defaults?.synchronize())
     }
     
-    func saveGender(gender: Int){
+    func setGender(gender: Int){
         defaults?.setObject(gender, forKey: genderKey)
         print(defaults?.synchronize())
     }
     
-    func saveWeight(){
+    
+    
+    func setWeight(weight : Double){
         defaults?.setObject(weight, forKey: weightKey)
         print(defaults?.synchronize())
     }
     
     func load() -> [DrinkObject] {
         return defaults?.objectForKey(itemsKey) as? [DrinkObject] ?? []
+    }
+    
+    func userInfoAvailable() -> Bool{
+        return defaults?.objectForKey(genderKey) != nil
+            && defaults?.objectForKey(weightKey) != nil
     }
     
     private let itemsKey = "items"

@@ -17,7 +17,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var doneButton: ODShadowButton!
     
   
-    let bacModel = BACModel()
+    let bacModel = BACModel.sharedInstance
     let picker = UIPickerView()
     let pickerData = ["Male","Female","Undefined"]
     let imageArray = ["769-male", "768-female", "779-users"]
@@ -39,12 +39,11 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         doneButton.hidden = true
         doneButton.userInteractionEnabled = false
         
-        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
-            genderSelection = defaults.getGender()
+        if(bacModel.userInfoAvailable()){
             picker.selectedRowInComponent(genderSelection)
             setGenderTextField.text = pickerData[genderSelection]
             changeColorForGender(genderSelection)
-            setWeightTextField.text = String(defaults.getWeight())
+            setWeightTextField.text = String(bacModel.weight)
             doneButton.hidden = false
             doneButton.userInteractionEnabled = true
             
@@ -100,10 +99,10 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     
     
     @IBAction func doneButtonWasPressed(sender: AnyObject) {
-            defaults.setGender(genderSelection)
+            bacModel.setGender(genderSelection)
             if let weight = setWeightTextField.text?.toDouble(){
-                defaults.setWeight(weight)
-                defaults.setGender(genderSelection)
+                bacModel.setWeight(weight)
+                bacModel.setGender(genderSelection)
             }else{
                 doneButton.backgroundColor = UIColor.redColor()
                 let alertController = UIAlertController(title: "Need input!", message:

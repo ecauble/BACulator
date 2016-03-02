@@ -14,7 +14,7 @@ class DrinkObject {
     var drinkName : String
     var drinkVolume : Double
     var drinkABV : Double
-    var drinkCount = 0
+    private var drinkCount : Int
     
     //initializer
     init(name: String, volume : Double, abv : Double){
@@ -24,11 +24,13 @@ class DrinkObject {
         drinkCount = 0
     }
     
-    func addDrink(){
+    func add(){
         self.drinkCount++
     }
     
-    
+    func remove(){
+        self.drinkCount--
+    }
     
     
 }

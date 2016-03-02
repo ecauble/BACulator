@@ -17,7 +17,7 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     //variables and constants
-    let defaults = DefaultsManager()
+    var bacModel = BACModel()
     var items : [(String, String, Double, Double)] = []
     
     override func viewDidLoad() {
@@ -32,12 +32,12 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: "CustomDrinkCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: "Cell")
         
-        if let selectedRow : Int = defaults.getDrinkSelectionRow(){
-             let path = NSIndexPath(forRow: selectedRow, inSection: 1)
-            tableView.selectRowAtIndexPath(path, animated: false, scrollPosition:
-                UITableViewScrollPosition.None);
-            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
-        }
+//        if let selectedRow : Int = BACModel.getDrinkSelectionRow(){
+//             let path = NSIndexPath(forRow: selectedRow, inSection: 1)
+//            tableView.selectRowAtIndexPath(path, animated: false, scrollPosition:
+//                UITableViewScrollPosition.None);
+//            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
+//        }
      }
     
     
@@ -57,8 +57,8 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         ABVTextField.resignFirstResponder()
         beerTextField.resignFirstResponder()
-        defaults.setABV(items[indexPath.row].2)
-        defaults.setDrinkSelectionRow(indexPath.row)
+        let drink = DrinkObject(name: items[indexPath.row].0, volume: items[indexPath.row].2, abv: items[indexPath.row].3)
+        //bacModel.append(drink)
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
     }
     

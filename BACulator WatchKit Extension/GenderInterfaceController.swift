@@ -16,7 +16,7 @@ class GenderInterfaceController: WKInterfaceController {
     
     @IBOutlet var genderPicker: WKInterfacePicker!
     //constants
-    let defaults = DefaultsManager()
+    let bacModel = BACModel.sharedInstance
     var genderList: [String] = ["Male","Female","Undefined"]
     var gender : Int?
     
@@ -31,9 +31,9 @@ class GenderInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if(defaults.isSet(K_GENDER) && defaults.isSet(K_WEIGHT)){
+        if(bacModel.userInfoAvailable()){
             self.pushControllerWithName("SetDrinkIC", context: nil)
-
+         
         }
         
         let pickerItems: [WKPickerItem] = genderList.map {
@@ -43,8 +43,8 @@ class GenderInterfaceController: WKInterfaceController {
          
             return pickerItem
         }
-        if(defaults.isSet(K_GENDER)){
-            gender = defaults.getGender()
+        if(bacModel.userInfoAvailable()){
+            gender = bacModel.gender
             genderPicker.setItems(pickerItems)
             genderPicker.setSelectedItemIndex(gender!)
           }else{
@@ -61,7 +61,7 @@ class GenderInterfaceController: WKInterfaceController {
     
     override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
         // Return data to be accessed in next interfaceController
-         defaults.setGender(gender!)
+         bacModel.setGender(gender!)
         return gender
      }
     
