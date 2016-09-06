@@ -7,12 +7,91 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let bacModel = BACModel.sharedInstance
+   
+    func setUserInfo(gender: Double, weight: Double) -> Bool{
+        
+        let user =
+            NSEntityDescription.insertNewObjectForEntityForName("User",
+                                                                inManagedObjectContext: managedObjectContext) as! User
+        
+        (user.gender, user.weight) = (NSInteger(gender), weight)
+        
+        do{
+            try managedObjectContext.save()
+            return true
+        } catch let error as NSError{
+            print("Failed to save the new person. Error = \(error)")
+        }
+        
+        return false
+        
+    }
+    
+    func getUserInfo(){
+        
+        let fetchRequest = NSFetchRequest(entityName: "User")
+        
+        /* And execute the fetch request on the context */
+        do{
+            let myUser = try managedObjectContext.executeFetchRequest(fetchRequest) as! [User]
+            for usr in myUser{
+                user.gender = usr.gender
+                user.weight = usr.weight
+            }
+        } catch let error as NSError{
+            print("Could not find any Person entities in the context \(error)")
+        }
+        
+    }
+    
+    
+    
+    
+    func createNewDrink(id: String,name: String, volume: Double, abv: Double, dateCreated: NSDate) -> Bool{
+        
+        let drink =
+            NSEntityDescription.insertNewObjectForEntityForName("Drink",
+                                                                inManagedObjectContext: managedObjectContext) as! Drink
+        
+        (drink.id, drink.name, drink.volume, drink.abv, drink.dateCreated) = (id, name, volume, abv, dateCreated)
+        
+        do{
+            try managedObjectContext.save()
+            return true
+        } catch let error as NSError{
+            print("Failed to save the new drink. Error = \(error)")
+        }
+        
+        return false
+        
+    }
+    
+    
+    func getDrinks() -> [Drink]{
+        
+        let fetchRequest = NSFetchRequest(entityName: "Drink")
+        var drinkList = [Drink]()
+        /* And execute the fetch request on the context */
+        do{
+            let drinks = try managedObjectContext.executeFetchRequest(fetchRequest) as! [Drink]
+            if drinks.count > 0{
+                for drink in drinks{
+                    drinkList.append(drink)
+                    
+                }
+            }
+        } catch let error as NSError{
+            print("Could not find any Person entities in the context \(error)")
+        }
+        return drinkList
+    }
+    
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -29,12 +108,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // if needed pop to root view controller
         rootNavigationController?.popToRootViewControllerAnimated(false)
+     
         
-        print(bacModel.userInfoAvailable())
-        print(bacModel.gender)
-        print(bacModel.weight)
+        var now = NSDate()
+        createNewDrink("001", name: "Scheiße Bier", volume: 12.0, abv: 0.067, dateCreated: now)
+        now = NSDate()
+        createNewDrink("002", name: "Warstiener", volume: 12.0, abv: 0.046, dateCreated: now)
+        now = NSDate()
+        createNewDrink("003", name: "Konig", volume: 12.0, abv: 0.05, dateCreated: now)
+
+        
         // navigate to proper view controller after reading defaults
-        if(bacModel.userInfoAvailable()){
+        if(true){
             tabbarController!.selectedViewController = tabbarController!.viewControllers?[1]
         }
         else{
@@ -42,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return !appLaunchedFromShortCut
     }
+    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -61,13 +147,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
     
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
+        self.saveContext()
     }
     
+    // MARK: - Core Data stack
     
+    lazy var applicationDocumentsDirectory: NSURL = {
+        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.ecauble.CData" in the application's documents Application Support directory.
+        let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
+        return urls[urls.count-1]
+    }()
     
-}
+    lazy var managedObjectModel: NSManagedObjectModel = {
+        // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
+        let modelURL = NSBundle.mainBundle().URLForResource("BACulator", withExtension: "momd")!
+        return NSManagedObjectModel(contentsOfURL: modelURL)!
+    }()
+    
+    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
+        // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
+        // Create the coordinator and store
+        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
+        let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
+        var failureReason = "There was an error creating or loading the application's saved data."
+        do {
+            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
+        } catch {
+            // Report any error we got.
+            var dict = [String: AnyObject]()
+            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
+            dict[NSLocalizedFailureReasonErrorKey] = failureReason
+            
+            dict[NSUnderlyingErrorKey] = error as NSError
+            let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
+            // Replace this with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
+            abort()
+        }
+        
+        return coordinator
+    }()
+    
+    lazy var managedObjectContext: NSManagedObjectContext = {
+        // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.) This property is optional since there are legitimate error conditions that could cause the creation of the context to fail.
+        let coordinator = self.persistentStoreCoordinator
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
+    
+    // MARK: - Core Data Saving support
+    
+    func saveContext () {
+        if managedObjectContext.hasChanges {
+            do {
+                try managedObjectContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+                abort()
+            }
+        }
+    }
+   
+    
+}//ends AppDelegate
+
+
+
 //MARK: - Handle QuickActions For ShorCut Items -> AppDelegate Extension
 typealias HandleForShorCutItem = AppDelegate
 extension HandleForShorCutItem {
@@ -114,6 +268,8 @@ extension HandleForShorCutItem {
         let handledShortCutItem = QuickActionsForItem(shortcutItem)
         completionHandler(handledShortCutItem)
     }
-    
+   
 }
+
+var user = User()
 

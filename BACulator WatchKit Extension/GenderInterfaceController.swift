@@ -16,7 +16,6 @@ class GenderInterfaceController: WKInterfaceController {
     
     @IBOutlet var genderPicker: WKInterfacePicker!
     //constants
-    let bacModel = BACModel.sharedInstance
     var genderList: [String] = ["Male","Female","Undefined"]
     var gender : Int?
     
@@ -31,7 +30,7 @@ class GenderInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        if(bacModel.userInfoAvailable()){
+        if(true){
             self.pushControllerWithName("SetDrinkIC", context: nil)
          
         }
@@ -43,8 +42,8 @@ class GenderInterfaceController: WKInterfaceController {
          
             return pickerItem
         }
-        if(bacModel.userInfoAvailable()){
-            gender = bacModel.gender
+        if(false){
+            gender = self.gender
             genderPicker.setItems(pickerItems)
             genderPicker.setSelectedItemIndex(gender!)
           }else{

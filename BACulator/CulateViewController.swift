@@ -21,7 +21,7 @@ class CulateViewController: UIViewController {
     
 
     var drinkCount : Int = 0
-    let bacModel = BACModel.sharedInstance
+    var bacModel = BACModel.sharedInstance
     let calc = Calculator()
     let lableFormat = "0.0000000"
     var startTime = NSTimeInterval()
@@ -71,8 +71,11 @@ class CulateViewController: UIViewController {
         startStopButtonPressed(self)
         startStopButton.hidden = false
         }
-        drinkCount++
+        bacModel.add(DrinkObject(name: "PBR" , volume: 12.0, abv: 0.5))
         beerCountLabel.text =  "\(drinkCount)"
+        for obj in bacModel.items{
+            print(obj.drinkName + String(arc4random()))
+        }
      }
 
   
@@ -110,7 +113,7 @@ class CulateViewController: UIViewController {
         
         //concatenate minuets, seconds and milliseconds as assign it to the UILabel
         timerLabel.text = "\(strMinutes):\(strSeconds):\(strFraction)"
-        let BAC : Double = calc.calculateABV(bacModel.gender!, weight: bacModel.weight!, ABV: bacModel.items[0].drinkABV, timePassed: timePassed, drinkCount: bacModel.items.count)
+        let BAC : Double = calc.calculateABV(bacModel.gender!, weight: bacModel.weight!, ABV: bacModel.items[0].drinkABV, timePassed: timePassed, drinkCount: drinkCount)
     
         BACLabel.text = "≅ " + (String(format: "%.7f", BAC)) + "%"
         if(calc.isNearLimit(BAC) == true){
@@ -125,7 +128,7 @@ class CulateViewController: UIViewController {
 
     @IBAction func startStopButtonPressed(sender: AnyObject) {
         if (!timer.valid) {
-            let aSelector : Selector = "updateTime"
+            let aSelector : Selector = #selector(CulateViewController.updateTime)
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
             startDate = NSDate()

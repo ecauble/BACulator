@@ -27,7 +27,7 @@ class Calculator {
         }
         else
         {
-            return 0.0000
+            return 0.0
         }
     }
     
@@ -40,7 +40,7 @@ class Calculator {
     }
     
     func isNearLimit(myBAC : Double)->Bool{
-        if(myBAC > 0.07 && myBAC < 0.08){
+        if(myBAC > 0.06 && myBAC < 0.08){
             return true
         }
         else{

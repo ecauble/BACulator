@@ -16,7 +16,6 @@ class BodySetupInterfaceController: WKInterfaceController {
   
     var weightList: [Double] = []
     var weight : Double?
-    let bacModel = BACModel.sharedInstance
     
     
     
@@ -27,32 +26,32 @@ class BodySetupInterfaceController: WKInterfaceController {
     }
 
     
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-         for(var i : Int = 80 ; i < 305; i+=5){
-            weightList.append(Double(i))
-        }
-        let pickerItems: [WKPickerItem] = weightList.map {
-            let pickerItem = WKPickerItem()
-            pickerItem.title = String($0)
-            return pickerItem
-        }
-        if(bacModel.userInfoAvailable()){
-            weight = bacModel.weight
-            weightPicker.setItems(pickerItems)
-            weightPicker.setSelectedItemIndex(weightList.indexOf(weight!)!)
-            
-        }else{
-            weightPicker.setItems(pickerItems)
-            weightPicker.setSelectedItemIndex(15)
-        }
-    }
-    
-    @IBAction func pickerSelectedItemChanged(value: Int) {
-        self.weight = weightList[value]
-        bacModel.setWeight(weight!)
-    }
+//    override func willActivate() {
+//        // This method is called when watch view controller is about to be visible to user
+//        super.willActivate()
+//         for(var i : Int = 80 ; i < 305; i+=5){
+//            weightList.append(Double(i))
+//        }
+//        let pickerItems: [WKPickerItem] = weightList.map {
+//            let pickerItem = WKPickerItem()
+//            pickerItem.title = String($0)
+//            return pickerItem
+//        }
+//        if(bacModel.userInfoAvailable()){
+//            weight = bacModel.weight
+//            weightPicker.setItems(pickerItems)
+//            weightPicker.setSelectedItemIndex(weightList.indexOf(weight!)!)
+//            
+//        }else{
+//            weightPicker.setItems(pickerItems)
+//            weightPicker.setSelectedItemIndex(15)
+//        }
+//    }
+//    
+//    @IBAction func pickerSelectedItemChanged(value: Int) {
+//        self.weight = weightList[value]
+//        bacModel.setWeight(weight!)
+//    }
 
   
     

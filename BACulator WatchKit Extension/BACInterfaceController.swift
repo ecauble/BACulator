@@ -21,7 +21,6 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     var drinkCount : Int = 0
     var timeZone = NSTimeZone(name: "UTC")
-    let bacModel = BACModel.sharedInstance
     let calc = Calculator()
     var startTime = NSTimeInterval()
     var startDate : NSDate?
@@ -40,7 +39,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
             session.activateSession()
         }
         
-        addMenuItemWithItemIcon(WKMenuItemIcon.Trash, title: "Reset", action: "resetDefaults")
+        //addMenuItemWithItemIcon(WKMenuItemIcon.Trash, title: "Reset", action: "resetDefaults")
     }
     
     func resetDefaults(){
@@ -90,7 +89,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBAction func stopStartPressed() {
         if (!timer.valid) {
             stopWatch.start()
-            let aSelector : Selector = "updateTime"
+            let aSelector : Selector = #selector(BACInterfaceController.updateTime)
             timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
             startTime = NSDate.timeIntervalSinceReferenceDate()
             startDate = NSDate()
@@ -108,7 +107,7 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
             BACLabel.setTextColor(UIColor.whiteColor())
             
             countLabel.setText(String(drinkCount))
-            bacModel.items[0].remove()
+            bacModel.removeItem(0)
             startStopButton.setBackgroundColor(UIColor(rgba: "#6DFD6E"))
             
         }
@@ -120,9 +119,9 @@ class BACInterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func addDrinkCalc() {
    
-        drinkCount++
+        drinkCount+=1
         countLabel.setText("\(drinkCount)")
-        bacModel.items[0].add()
+       // bacModel.items[0].add()
 //        let message = ["wk_DrinkCount": String(drinkCount)]
 //        WCSession.defaultSession().transferUserInfo(message)
     }

@@ -17,18 +17,17 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     @IBOutlet weak var doneButton: ODShadowButton!
     
   
-    let bacModel = BACModel.sharedInstance
     let picker = UIPickerView()
     let pickerData = ["Male","Female","Undefined"]
     let imageArray = ["769-male", "768-female", "779-users"]
-    var genderSelection : Int = 2
- 
+    var genderSelection : Int = 0
+     
     
     override func viewDidLoad() {
         super.viewDidLoad()
       
         // Do any additional setup after loading the view, typically from a nib.
-        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+       // UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         
         picker.delegate = self
         picker.dataSource = self
@@ -36,19 +35,18 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
         setGenderTextField.inputView = picker
         setWeightTextField.delegate = self
         
-        doneButton.hidden = true
         doneButton.userInteractionEnabled = false
         
         if(bacModel.userInfoAvailable()){
             picker.selectedRowInComponent(genderSelection)
             setGenderTextField.text = pickerData[genderSelection]
             changeColorForGender(genderSelection)
-            setWeightTextField.text = String(bacModel.weight)
+            setWeightTextField.text = String(bacModel.weight!)
             doneButton.hidden = false
             doneButton.userInteractionEnabled = true
             
         }else{
-            print("not set")
+            print("user info not set")
         }
      }
     
@@ -56,6 +54,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
     }
+    
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }

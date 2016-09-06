@@ -17,7 +17,6 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     //variables and constants
-    var bacModel = BACModel()
     var items : [(String, String, Double, Double)] = []
     
     override func viewDidLoad() {
@@ -38,6 +37,10 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
 //                UITableViewScrollPosition.None);
 //            tableView.cellForRowAtIndexPath(path)?.accessoryType = .Checkmark
 //        }
+       // bacModel.add(DrinkObject(name: "asdf", volume: 12.0 , abv: 0.05))
+        
+       
+
      }
     
     
@@ -57,8 +60,7 @@ class CustomDrinkViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         ABVTextField.resignFirstResponder()
         beerTextField.resignFirstResponder()
-        let drink = DrinkObject(name: items[indexPath.row].0, volume: items[indexPath.row].2, abv: items[indexPath.row].3)
-        //bacModel.append(drink)
+       
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
     }
     
